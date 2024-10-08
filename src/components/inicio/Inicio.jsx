@@ -1,3 +1,4 @@
+import Pattrulla from "../patrulla/Patrulla";
 import "./inicio.css"
 
 import { Link } from "react-router-dom";
@@ -12,7 +13,7 @@ const Inicio = () => {
             </div>
             <div className="menuend">
                 
-                <Link> <p className="pmenu">iniciar sesion</p> </Link>
+                <Link to="agregar"> <p className="pmenu">agregar </p> </Link>
                 
               
     <Link to="/registro">

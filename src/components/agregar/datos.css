@@ -1,0 +1,123 @@
+.fa{
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.descripcion{
+    width: 80% !important;
+}
+ 
+html{
+    height: auto;
+}
+
+.bon{
+    margin-left: 47%;
+    
+}
+
+.faa{
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr  1fr;
+    grid-template-rows: 30% 70%;
+    gap: 10px;
+    box-sizing: border-box;
+    
+    
+
+}
+
+
+
+button.bon {
+    margin-top: 80px !important;
+    background-color: #4CAF50;  
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Margen alrededor */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    border-radius: 12px; /* Bordes redondeados */
+    transition-duration: 0.4s; /* Duración de la transición */
+   
+  }
+  
+  button.bon:hover {
+    background-color: white; /* Color de fondo al pasar el mouse */
+    color: black; /* Color del texto al pasar el mouse */
+    border: 2px solid #4CAF50; /* Agregar borde */
+  }
+
+
+#tex{
+    width: 76%;
+    height: 70%;
+    
+}
+.ff{
+    grid-column-start: 1; /* Comienza en la primera columna */
+    grid-column-end: 4; /* Termina después de la tercera columna */
+    grid-row: 2;
+     
+    height: 95%;
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+
+
+    }
+.conu{
+    width: 100%;
+     
+}
+.esado{
+    width: 90%;
+    height: 36px;
+    margin-bottom: 15px;
+}
+
+.conu > h1{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .faa{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    #tex{
+        width: 95%;
+        height: 70%;
+        margin-left: 0%;
+        
+    }
+    .esado{
+        width: 95%;
+        height: 45px;
+
+    }
+   
+    button.bon{
+        margin-left: 0;
+    }
+    .ff{
+        width: 100%;
+        align-items: start;
+    }
+}

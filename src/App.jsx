@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Inicio from './components/inicio/Inicio';
 import Pattrulla from './components/patrulla/Patrulla';
+import Datos from './components/agregar/Datos';
 function App() {
   
 
@@ -20,7 +21,7 @@ function App() {
       <Routes> 
         
       <Route path="/" element={<Pattrulla/>} />
-      
+      <Route path="/agregar" element={<Datos/>} />
       
          </Routes>
     </Router>

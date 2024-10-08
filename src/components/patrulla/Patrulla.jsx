@@ -1,9 +1,12 @@
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';import Inicio from "../inicio/Inicio";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./patrulla.css"
+import axios from 'axios';
 const Pattrulla = () => {
+
+   
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const handleIconClick = (index) => {
