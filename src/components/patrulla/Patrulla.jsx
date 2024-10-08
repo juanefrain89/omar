@@ -42,6 +42,15 @@ const Pattrulla = () => {
     <div className="opciones"> 
     <h1 className='h1opcion'>opcion 1</h1>  <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
     </div> 
+
+<div className="nn">
+    <ul className='ul'>
+        <li>el carmen Nl</li>
+        <li>8135654041</li>
+        <li>lorenzo</li>
+    </ul>
+</div>
+
     <LoadScript
       googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc&libraries=places"
     >
