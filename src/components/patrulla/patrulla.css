@@ -1,0 +1,60 @@
+.card{
+     width: 85%;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 55px;
+    background-color: white;
+}
+
+.arriba{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: rgb(172, 171, 171) solid 1px ;
+}
+
+p{
+    margin: 0%;
+}
+
+.carta{
+   cursor: pointer;
+    height: 35px;
+    margin-right: 25px;
+ 
+}
+
+.carta >p{
+    font-size: 20px;
+}
+
+.con{
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   box-sizing: border-box;
+
+}
+
+.opciones{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+   
+} 
+
+.h1opcion{
+    margin-left: 29px;
+}
+.kk{
+    margin-right: 29px;
+}
+
+.alargar{
+    height: auto !important ;
+}
