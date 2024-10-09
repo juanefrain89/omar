@@ -4,6 +4,8 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { useEffect, useState } from 'react';
 import "./patrulla.css"
 import axios from 'axios';
+import pa from "./diseño.png"
+import Piepag from './pie/Piepag';
 const Pattrulla = () => {
 
     const [datos, setdatos]=useState([])
@@ -31,33 +33,26 @@ console.log(e.data);
         height: '400px'  
       };
     const center = {
-        lat: 19.4326,  // Latitud inicial (Ciudad de México)
-        lng: -99.1332  // Longitud inicial
+        lat: 19.4326,  
+        lng: -99.1332  
       };
     return ( 
         <>
         <Inicio></Inicio>
+<div className="padre"> 
 
+<div className="izquierda"></div>a
         <div className="card">
-            
-            <div className="arriba">
-                
-                <div className="carta"> <p>patrulla</p> </div>
-               
-              
-                <div className="carta"> <p>patrulla</p> </div>
-                
-                <div className="carta"> <p>patrulla</p> </div>
-                
-            </div>
+            <center> 
+            <h1 className='patrullash'>tus patrullas</h1>
            
+            </center>
 
-
-            {datos.map((item, index) => (
+            {[1,2,3].map((item, index) => (
                
 <div key={index} className={`con ${expandedIndex === index ? 'alargar' : ''}`}>
     <div className="opciones"> 
-    <h1 className='h1opcion'>patrulla {index+1}</h1>  <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
+    <h1 className='h1opcion'>patrulla {index+1}</h1> <h1 className='h1opcion'>el carmen</h1> <h1 className='h1opcion'>ubcvdf</h1> <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
     </div> 
 
 <div className="nn">
@@ -84,9 +79,9 @@ console.log(e.data);
 
 
         </div>
-        
-        
-      
+        </div>
+    
+      <Piepag></Piepag>
      
         </>
      );

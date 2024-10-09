@@ -4,6 +4,7 @@ import "./inicio.css"
 import { Link } from "react-router-dom";
 const Inicio = () => {
     return ( <>
+       
      <nav className="contenormenu">
             <div className="menustart">
             <Link to="/">  
