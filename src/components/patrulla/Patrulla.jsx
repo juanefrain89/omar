@@ -52,7 +52,7 @@ console.log(e.data);
                
 <div key={index} className={`con ${expandedIndex === index ? 'alargar' : ''}`}>
     <div className="opciones"> 
-    <h1 className='h1opcion'>patrulla {index+1}</h1> <h1 className='h1opcion'>el carmen</h1> <h1 className='h1opcion'>ubcvdf</h1> <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
+    <h1 className='h1opcion'>patrulla {index+1}</h1> <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
     </div> 
 
 <div className="nn">
