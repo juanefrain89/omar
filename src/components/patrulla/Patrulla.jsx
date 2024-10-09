@@ -6,7 +6,21 @@ import "./patrulla.css"
 import axios from 'axios';
 const Pattrulla = () => {
 
-   
+    const [datos, setdatos]=useState([])
+    useEffect(()=>{
+        axios.get("http://localhost:4200")
+        .then(e =>{
+    setdatos(e.data)
+console.log(datos);
+console.log(e.data);
+        }).catch(error =>{
+            console.log(error);           
+        })
+       
+    },[])
+
+  
+  
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const handleIconClick = (index) => {
@@ -39,18 +53,18 @@ const Pattrulla = () => {
            
 
 
-            {[1, 2, 3, 4].map((item, index) => (
+            {datos.map((item, index) => (
                
 <div key={index} className={`con ${expandedIndex === index ? 'alargar' : ''}`}>
     <div className="opciones"> 
-    <h1 className='h1opcion'>opcion 1</h1>  <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
+    <h1 className='h1opcion'>patrulla {index+1}</h1>  <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
     </div> 
 
 <div className="nn">
     <ul className='ul'>
-        <li>el carmen Nl</li>
-        <li>8135654041</li>
-        <li>lorenzo</li>
+        <li>placa :{item.placa}</li>
+        <li>ubicacion: {item.ubicacion}</li>
+        <li>unidad: {item.id_usuario}</li>
     </ul>
 </div>
 
@@ -70,6 +84,7 @@ const Pattrulla = () => {
 
 
         </div>
+        
         
       
      

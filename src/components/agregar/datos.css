@@ -44,12 +44,12 @@ button.bon {
     text-align: center; 
     text-decoration: none;
     display: inline-block; 
-    font-size: 16px; /* Tamaño de fuente */
-    margin: 4px 2px; /* Margen alrededor */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    border-radius: 12px; /* Bordes redondeados */
-    transition-duration: 0.4s; /* Duración de la transición */
-   
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 12px;
+    transition-duration: 0.4s;
+   width: 300px;
   }
   
   button.bon:hover {
