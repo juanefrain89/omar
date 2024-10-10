@@ -14,7 +14,7 @@ const Inicio = () => {
             </div>
             <div className="menuend">
                 
-                <Link to="agregar"> <p className="pmenu">agregar </p> </Link>
+                <Link to="/agregar"> <p className="pmenu">agregar </p> </Link>
                 
               
     <Link to="/registro">

@@ -10,7 +10,7 @@ const Pattrulla = () => {
 
     const [datos, setdatos]=useState([])
     useEffect(()=>{
-        axios.get("http://localhost:4200")
+        axios.get("https://ddcd-5.onrender.com")
         .then(e =>{
     setdatos(e.data)
 console.log(datos);
@@ -38,10 +38,10 @@ console.log(e.data);
       };
     return ( 
         <>
+       
         <Inicio></Inicio>
-<div className="padre"> 
 
-<div className="izquierda"></div>a
+
         <div className="card">
             <center> 
             <h1 className='patrullash'>tus patrullas</h1>
@@ -52,7 +52,7 @@ console.log(e.data);
                
 <div key={index} className={`con ${expandedIndex === index ? 'alargar' : ''}`}>
     <div className="opciones"> 
-    <h1 className='h1opcion'>patrulla {index+1}</h1> <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
+    <h1 className='h1opcion'>patrulla {index+1}</h1> <h1 className='h1opcion'>unidad</h1> <h1 className='h1opcion'>placa</h1> <h1></h1> <FontAwesomeIcon icon={faCaretDown} className='kk'    onClick={() => handleIconClick(index)}/>
     </div> 
 
 <div className="nn">
@@ -79,7 +79,7 @@ console.log(e.data);
 
 
         </div>
-        </div>
+       
     
       <Piepag></Piepag>
      

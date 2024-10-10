@@ -12,6 +12,7 @@ import {
 import Inicio from './components/inicio/Inicio';
 import Pattrulla from './components/patrulla/Patrulla';
 import Datos from './components/agregar/Datos';
+import Login from './components/Login/Login';
 function App() {
   
 
@@ -19,7 +20,7 @@ function App() {
     <>
      <Router>
       <Routes> 
-        
+      
       <Route path="/" element={<Pattrulla/>} />
       <Route path="/agregar" element={<Datos/>} />
       
