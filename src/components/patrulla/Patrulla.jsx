@@ -54,8 +54,7 @@ const Pattrulla = () => {
             <div key={index} className={`con ${expandedIndex === index ? 'alargar' : ''}`}>
               <div className="opciones">
                 <h1 className='h1opcion'>Patrulla {index + 1}</h1>
-                <h1 className='h1opcion'>Unidad</h1>
-                <h1 className='h1opcion'>Placa</h1>
+                
                 <FontAwesomeIcon icon={faCaretDown} className='kk' onClick={() => handleIconClick(index)} />
               </div>
 
@@ -80,39 +79,7 @@ const Pattrulla = () => {
       </div>
 
       {/* Tabla con la lógica para ocultar tr y dejar un solo td */}
-      <table>
-        {datos.map((item, index) => (
-          <tr key={index} className={expandedIndex === index ? 'ocultar' : ''}>
-            {expandedIndex === index ? (
-              // Si está expandido, mostramos solo un td con colspan
-              <td colSpan="2">
- <div className="nn">
-                <ul className='ul'>
-                  <li>Placa: {item.placa || 'Desconocida'}</li>
-                  <li>Ubicación: {item.ubicacion || 'Desconocida'}</li>
-                  <li>Unidad: {item.id_usuario || 'Desconocida'}</li>
-                </ul>
-              </div>
-
-              <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc&libraries=places">
-                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-                  <Marker position={center} />
-                </GoogleMap>
-              </LoadScript>
-
-              </td>
-            ) : (
-              // Si no está expandido, mostramos las dos columnas normales
-              <>
-                <td>Placa</td>
-                <td className={`ultima ${expandedIndex === index ? 'alargar' : ''}`}>
-                  <FontAwesomeIcon icon={faCaretDown} className='kk' onClick={() => handleIconClick(index)} />
-                </td>
-              </>
-            )}
-          </tr>
-        ))}
-      </table>
+      
 
       <Piepag />
     </>
