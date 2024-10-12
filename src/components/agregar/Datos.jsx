@@ -117,7 +117,7 @@ if(p.length < 1){
 
     const mandar = () => {
         const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
-        if(estado.contacto.length > 5 && estado.numero.length > 9 && estado.placa.length){
+       
 
        
         if (userConfirmed) {
@@ -138,10 +138,6 @@ if(p.length < 1){
             .catch((err) => {
                 console.log(err);
             });
-        }}else{
-            pp("llena los campos adecuadamente");
-            console.log(p);
-            
         }
     };
 
