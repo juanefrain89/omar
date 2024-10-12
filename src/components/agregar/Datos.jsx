@@ -23,7 +23,8 @@ const Datos = () => {
     
     const [estado, setEstado] = useState({
         placa: "",
-        ubicacion: "", // Aquí almacenaremos la ubicación
+        ubicacion: "",
+        unidad :'',// Aquí almacenaremos la ubicación
         referencias: "",
         direccion: "",
         numero: "",
@@ -116,9 +117,11 @@ if(p.length < 1){
 },[p])
 
     const mandar = () => {
+        console.log(estado);
         const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
        
 
+      
        
         if (userConfirmed) {
             const formData = new FormData();
@@ -126,7 +129,7 @@ if(p.length < 1){
                 formData.append(key, estado[key]);
             }
 
-            axios.post("https://ddcd-5.onrender.com/l", formData, {
+            axios.post("http://localhost:4200/l", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
@@ -153,11 +156,10 @@ if(p.length < 1){
                         <input onChange={fun} name="contacto" className="esado" type="text" />
                     </div>
                     <div className="conu">
-                        <h1>Ubicación</h1>
-                        {/* Muestra la ubicación en el input si está disponible */}
+                        <h1>Ubicación</h1>                       
                         <input name="ubicacion" value={estado.latitud} onChange={fun} className="esado" type="text" />
                         <h1>Número de Unidad</h1>
-                        <input name="numero" className="esado" onChange={fun} type="number" />
+                        <input name="unidad" className="esado" onChange={fun} type="number" />
                     </div>
                     <div className="conu">
                         <h1>Referencias</h1>
