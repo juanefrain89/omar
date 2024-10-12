@@ -41,6 +41,8 @@ p{
    box-sizing: border-box;
    background-color:#1F213A;
    border-radius: 15px;
+   transition: height 5s ease; 
+
    transition: background-color 2s ease;
 }
 
@@ -74,7 +76,7 @@ p{
 }
 
 .alargar{
-    height: 555px ;
+    height:  1000px;
     transition: height 5s ease; 
 }
 
@@ -85,6 +87,13 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 
 .padre{
     display: flex;
+}
+
+
+.foto{
+    width: 100%;
+    height: 300px;
+    margin-top: 35px;
 }
 
 table{

@@ -18,6 +18,8 @@ const Pattrulla = () => {
       .then(e => {
         setDatos(e.data);
         setLoading(false);
+        console.log(e.data);
+        
       })
       .catch(error => {
         console.log(error);
@@ -65,12 +67,14 @@ const Pattrulla = () => {
                   <li>Unidad: {item.id_usuario || 'Desconocida'}</li>
                 </ul>
               </div>
+              
 
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc&libraries=places">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
                   <Marker position={center} />
                 </GoogleMap>
               </LoadScript>
+              <img className='foto' src={item.imagen} alt="" />
             </div>
           )) : (
             <p>No hay patrullas disponibles en este momento.</p>

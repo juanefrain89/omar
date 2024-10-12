@@ -116,33 +116,34 @@ if(p.length < 1){
 }
 },[p])
 
-    const mandar = () => {
-        console.log(estado);
-        const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
-       
-
-      
-       
-        if (userConfirmed) {
-            const formData = new FormData();
-            for (const key in estado) {
-                formData.append(key, estado[key]);
-            }
-
-            axios.post("http://localhost:4200/l", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            })
-            .then((res) => {
-                console.log(res.data);
-                console.log("Registro enviado");
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+const mandar = () => {
+    console.log(estado);
+    const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
+   
+    if (userConfirmed) {
+        const formData = new FormData();
+        for (const key in estado) {
+            formData.append(key, estado[key]);
         }
-    };
+
+        axios.post("https://ddcd-5.onrender.com//l", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        })
+        .then((res) => {
+            console.log(res.data);
+            console.log("Registro enviado");
+            // Aquí obtienes el id del nuevo registro insertado
+            console.log("ID del nuevo registro:", res.data.id);
+            pp(`Nuevo registro insertado con ID: ${res.data.id}`);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+};
+
 
     return (
         <>
@@ -166,6 +167,7 @@ if(p.length < 1){
                         <input onChange={fun} name="referencias" className="esado" type="text" />
                         <h1>Imágenes</h1>
                         <input type="file" onChange={handleImageChange} name="imagen" />
+                        
                     </div>
                     <div className="ff">
                         <p className="confirmacion">{p}</p>
