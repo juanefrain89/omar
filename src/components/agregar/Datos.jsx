@@ -45,8 +45,8 @@ const Datos = () => {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const userLatLng = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
+                        lat: 25.68333908659982,
+                        lng: -100.30677181798846
                     };
                     setUserLocation(userLatLng);
 latitud =userLatLng.lat;
@@ -61,8 +61,8 @@ latitud =userLatLng.lat;
                     
                     
                     if (!isScriptLoaded) {
-                        // Asegúrate de pasar la API key como parámetro
-                        loadGoogleMapsScript('TU_API_KEY')
+                       
+                        loadGoogleMapsScript('AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc')
                             .then(() => {
                                 setIsScriptLoaded(true);
                                 initMap(userLatLng);
@@ -100,10 +100,26 @@ latitud =userLatLng.lat;
             ...estado,
             [e.target.name]: e.target.value 
         });
+        console.log(estado.placa);
+        
     };
+const [p, pp]=useState("")
+
+
+useEffect(()=>{
+const confirmacion= document.querySelector(".confirmacion")
+if(p.length < 1){
+    confirmacion.style.position="absolute"
+}else{
+     confirmacion.style.position="relative"
+}
+},[p])
 
     const mandar = () => {
         const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
+        if(estado.contacto.length > 5 && estado.numero.length > 9 && estado.placa.length){
+
+       
         if (userConfirmed) {
             const formData = new FormData();
             for (const key in estado) {
@@ -122,6 +138,10 @@ latitud =userLatLng.lat;
             .catch((err) => {
                 console.log(err);
             });
+        }}else{
+            pp("llena los campos adecuadamente");
+            console.log(p);
+            
         }
     };
 
@@ -150,6 +170,7 @@ latitud =userLatLng.lat;
                         <input type="file" onChange={handleImageChange} name="imagen" />
                     </div>
                     <div className="ff">
+                        <p className="confirmacion">{p}</p>
                         <button onClick={mandar} className="bon">Enviar</button>
                     </div>
                 </div>

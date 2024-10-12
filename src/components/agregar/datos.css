@@ -6,6 +6,11 @@
     box-sizing: border-box; 
 }
 
+.confirmacion{
+    font-size: 23px;
+    color: red;
+}
+
 .descripcion{
     width: 80% !important;
 }
