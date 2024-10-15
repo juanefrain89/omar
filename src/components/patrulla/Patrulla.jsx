@@ -9,6 +9,7 @@ import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
 
 const Pattrulla = () => {
+  const [selectedId, setSelectedId] = useState(null);
   const [datos, setDatos] = useState([5,5]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
@@ -51,7 +52,10 @@ console.log(index);
     lat: 19.4326,
     lng: -99.1332
   };
-
+  const handleMarkerClick = (id) => {
+    setSelectedId(id);  // Guardamos el id del marker clicado
+    alert(`ID de la patrulla seleccionada: ${id}`);  // Muestra un alert con el id (puedes cambiarlo)
+  };
 
   
 
@@ -88,7 +92,7 @@ console.log(index);
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
                   
                 {markerPositions.map((position, index) => (
-          <Marker key={index} position={position} onClick={ind(index)} />
+          <Marker key={index} position={position} onClick={() => handleMarkerClick(item.id)} />
         ))}
                 </GoogleMap>
               </LoadScript>
@@ -98,10 +102,7 @@ console.log(index);
             <p>No hay patrullas disponibles en este momento.</p>
           )
         )}
-      </div>
-
-      {/* Tabla con la lógica para ocultar tr y dejar un solo td */}
-      
+      </div>         
 
       <Piepag />
     </>
