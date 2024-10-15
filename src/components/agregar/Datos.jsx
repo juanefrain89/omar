@@ -58,7 +58,7 @@ latitud =userLatLng.lat;
                         latitud: `${userLatLng.lat}`,
                         longitud:`${userLatLng.lng}`
                     }));
-                    console.log(latitud);
+                    console.log(latitud );
                     
                     
                     if (!isScriptLoaded) {
@@ -126,7 +126,7 @@ const mandar = () => {
             formData.append(key, estado[key]);
         }
 
-        axios.post("https://ddcd-5.onrender.com/l", formData, {
+        axios.post("http://localhost:4200/l", formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }

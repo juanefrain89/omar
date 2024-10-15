@@ -9,7 +9,7 @@ import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
 
 const Pattrulla = () => {
-  const [datos, setDatos] = useState([]);
+  const [datos, setDatos] = useState([5,5]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
 
