@@ -9,7 +9,7 @@ import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
 
 const Pattrulla = () => {
-  const [datos, setDatos] = useState([]);
+  const [datos, setDatos] = useState([5,5]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
   const markerPositions = [
@@ -18,6 +18,13 @@ const Pattrulla = () => {
     { lat: 20.659698, lng: -103.349609 }, // Guadalajara
     { lat: 25.686614, lng: -100.316113 }, // Monterrey
   ];
+
+
+
+const ind=(index)=>{
+console.log(index);
+
+}
 
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com")
@@ -81,7 +88,7 @@ const Pattrulla = () => {
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
                   
                 {markerPositions.map((position, index) => (
-          <Marker key={index} position={position} />
+          <Marker key={index} position={position} onClick={ind(index)} />
         ))}
                 </GoogleMap>
               </LoadScript>
