@@ -89,8 +89,11 @@ const funcionver=()=>{
     document.body.style.overflow = 'hidden'; // Deshabilita el scroll
   
 }
+
+const [pm, setpm  ]=useState()
 const funcionver2=(id)=>{setver(!ver)
   console.log(id);
+  setpm(id)
   
   document.body.style.overflow = 'auto';
 
@@ -125,12 +128,12 @@ const funcionver2=(id)=>{setver(!ver)
              
 
              <div className="padre"> 
-              
+              <h1>{pm}</h1>
               {ver == false?( <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onClick={funcionver}>
                   
                 {markerPositions.map((position, index) => (
-          <Marker onClick={funcionver} key={index}  position={{ lat: position.lat, lng: position.lng }} />
+          <Marker onClick={() => funcionver(index)}  key={index}  position={{ lat: position.lat, lng: position.lng }} />
         ))}
                 </GoogleMap>
               </LoadScript>):('')}
