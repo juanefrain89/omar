@@ -16,6 +16,9 @@ const Pattrulla = () => {
   const [ver, setVer] = useState(false);
   const [pm, setPm] = useState(null); 
 
+  console.log(parseFloat(25.68333908659982).toFixed(6));
+  
+
   const markerPositions = [
     { lat: 19.432608, lng: -99.133209 },
     { lat: 19.702556, lng: -101.192376 },
@@ -104,7 +107,7 @@ const [nuevoarray, setarray]=useState([]);
                     <Marker
                       onClick={() => funcionver(position.id)}  
                       key={index}
-                      position={{ lat:parseFloat(position.latitud).toFixed(6), lng: parseFloat(position.longitud).toFixed(6)  }}
+                      position={{ lat: Number(parseFloat(position.latitud)), lng: Number(parseFloat(position.longitud))  }}
                     />
                   ))}
                 </GoogleMap>
