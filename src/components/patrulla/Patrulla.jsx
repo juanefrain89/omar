@@ -89,7 +89,9 @@ const funcionver=()=>{
     document.body.style.overflow = 'hidden'; // Deshabilita el scroll
   
 }
-const funcionver2=()=>{setver(!ver)
+const funcionver2=(id)=>{setver(!ver)
+  console.log(id);
+  
   document.body.style.overflow = 'auto';
 
 }
