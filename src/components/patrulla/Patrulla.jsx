@@ -77,7 +77,7 @@ console.log(index);
   
   const [ver , setver]=useState(false);
 
-const funcionver=(id)=>{
+const funcionver=()=>{
   console.log(id);
   
   setver(!ver)
@@ -125,7 +125,7 @@ const funcionver2=()=>{setver(!ver)
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onClick={funcionver}>
                   
                 {markerPositions.map((position, index) => (
-          <Marker onClick={funcionver(index) } key={index}  position={{ lat: position.lat, lng: position.lng }} />
+          <Marker onClick={funcionver} key={index}  position={{ lat: position.lat, lng: position.lng }} />
         ))}
                 </GoogleMap>
               </LoadScript>):('')}
