@@ -223,16 +223,13 @@ td{
     border: none;
     background-color: rgb(59, 59, 224);
     border: none;
-    color: white;
-    
+    color: white;    
     text-align: center;
     text-decoration: none;
-    font-size: 33px;
-    
+    font-size: 33px;    
     cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
-   
+    transition: background-color 0.3s ease;   
   }
 
   .modificar:hover{
