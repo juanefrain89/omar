@@ -114,7 +114,7 @@ const funcionver2=(id)=>{setver(!ver)
           </div>):( <Inicio />)}
      
       <button onClick={funcionver}>click</button>
-<p>{selectedId}</p>
+<p>{selectedId} el id</p>
       <div className="card">
         <center>
           <h1 className='patrullash'>Tus patrullas</h1>
