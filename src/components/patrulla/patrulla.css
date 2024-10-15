@@ -50,7 +50,9 @@ p{
 
 
 .patrullash{
-    color: white;
+    color: black;
+    font-size: 55px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .con:hover{
@@ -215,7 +217,7 @@ td{
   }
 
   .modificar{
-    width: 70%;
+    width: 100%;
     height: 40px;
     border-radius: 12px;
     border: none;

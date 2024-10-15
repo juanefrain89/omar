@@ -113,21 +113,11 @@ const funcionver2=()=>{setver(!ver)
         {loading ? (
           <p>Cargando patrullas...</p>
         ) : (
-          datos.length > 0 ? datos.map((item, index) => (
-            <div key={index} className={`con ${expandedIndex === index ? 'alargar' : ''}`}>
-              <div className="opciones">
-                <h1 className='h1opcion'>Patrulla {index + 1}</h1>
-                
-                <FontAwesomeIcon icon={faCaretDown} className='kk' onClick={() => handleIconClick(index)} />
-              </div>
+       
+         
+             
 
-              <div className="nn">
-                <ul className='ul'>
-                  <li>Placa: {item.placa || 'Desconocida'}</li>
-                  <li>Ubicación: {item.ubicacion || 'Desconocida'}</li>
-                  <li>Unidad: {item.id_usuario || 'Desconocida'}</li>
-                </ul>
-              </div>
+             <div className="padre"> 
               
               {ver == false?( <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onClick={funcionver}>
@@ -137,12 +127,8 @@ const funcionver2=()=>{setver(!ver)
         ))}
                 </GoogleMap>
               </LoadScript>):('')}
+              </div>
              
-              <img className='foto' src={item.imagen} alt="" />
-            </div>
-          )) : (
-            <p>No hay patrullas disponibles en este momento.</p>
-          )
         )}
       </div>         
 
