@@ -205,7 +205,8 @@ td{
     display: flex;
     justify-content:space-around;
     flex-direction: column;
-    align-items: center;
+   padding-left: 50px;
+   padding-right: 20px;
   }
   .carac >h1{
     font-size: 40px;
