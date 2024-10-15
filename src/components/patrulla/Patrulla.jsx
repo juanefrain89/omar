@@ -74,8 +74,8 @@ const [nuevoarray, setarray]=useState([]);
               <div className="imagen"><img src={diseño} alt="Diseño" /></div>
               <div className="carac">
                 <h1>Placa: ubx728</h1>
-                <h1>Dirección: Monterrey</h1>                
-                <h1>Unidad: 5656</h1> 
+                <h1>Dirección: {nuevoarray.unidad}</h1>                
+                <h1>Unidad: {nuevoarray.latitud}</h1> 
                 <button className='modificar'>Modificar</button>
               </div>
             </div>
