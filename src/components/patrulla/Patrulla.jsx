@@ -74,7 +74,7 @@ const [nuevoarray, setarray]=useState([]);
           <button className='salir' onClick={funcionver2}>x</button>
           <div className="contenedoropciones">
             <div className="one">
-              <div className="imagen"><img src={diseño} alt="Diseño" /></div>
+              <div className="imagen"><img src={nuevoarray.imagen} alt="Diseño" /></div>
               <div className="carac">
                 <h1>Placa: ubx728</h1>
                 <h1>Dirección: {nuevoarray.unidad}</h1>                
