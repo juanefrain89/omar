@@ -104,7 +104,7 @@ const funcionver2=()=>{setver(!ver)
         <div className="contenedoropciones">
           
           <div className="one"><div className="imagen"><img src={diseño} alt="" /></div>
-          <div className="carac"><h1>placa : ubx728 </h1> <h1>direccion: monterrey</h1> <h1>unidad : 5656 </h1> <button className='modificar'>modificar</button> </div>
+          <div className="carac"><h1>placa : ubx728 </h1><h1>direccion: monterrey</h1>   <h1>unidad : 5656 </h1> <button className='modificar'>modificar</button> </div>
           </div></div>
           </div>):( <Inicio />)}
      

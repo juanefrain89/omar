@@ -211,8 +211,8 @@ td{
    padding-right: 30px;
    padding-right: 20px;
   }
-  .carac >h1{
-    font-size: 40px;
+  .ññ >h1{
+    font-size: 30px;
     margin: 0%;
   }
 
@@ -248,3 +248,18 @@ td{
     cursor: pointer;
   }
 
+.ññ{
+    display: flex;
+    align-items: center;
+    background-color: #373847;
+    
+
+}
+
+.ññ >h2{
+    margin: 0%;
+    color: red
+}
+.ññ >h1{
+    margin: 0;
+}
