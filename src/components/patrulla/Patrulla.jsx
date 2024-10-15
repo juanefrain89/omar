@@ -62,7 +62,7 @@ console.log(index);
   return (
     <>
       <Inicio />
-
+<p>{selectedId}</p>
       <div className="card">
         <center>
           <h1 className='patrullash'>Tus patrullas</h1>
