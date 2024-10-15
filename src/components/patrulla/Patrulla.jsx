@@ -77,8 +77,8 @@ console.log(index);
   
   const [ver , setver]=useState(false);
 
-const funcionver=(id)=>{
-  console.log(id);
+const funcionver=()=>{
+  
   
   setver(!ver)
   window.scrollTo(0, 0);
@@ -105,7 +105,7 @@ const funcionver2=()=>{setver(!ver)
           </div></div>
           </div>):( <Inicio />)}
      
-      <button onClick={() => funcionver(5)}>click</button>
+      <button onClick={funcionver}>click</button>
 <p>{selectedId}</p>
       <div className="card">
         <center>
@@ -125,7 +125,7 @@ const funcionver2=()=>{setver(!ver)
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onClick={funcionver}>
                   
                 {markerPositions.map((position, index) => (
-          <Marker onClick={funcionver(index)} key={index}  position={{ lat: position.lat, lng: position.lng }} />
+          <Marker onClick={funcionver} key={index}  position={{ lat: position.lat, lng: position.lng }} />
         ))}
                 </GoogleMap>
               </LoadScript>):('')}
