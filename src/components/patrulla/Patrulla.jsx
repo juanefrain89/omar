@@ -7,7 +7,7 @@ import "./patrulla.css";
 import axios from 'axios';
 import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
-
+import diseño from './diseño.png'
 const Pattrulla = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [datos, setDatos] = useState([5,5]);
@@ -53,15 +53,57 @@ console.log(index);
     lng: -99.1332
   };
   const handleMarkerClick = (id) => {
-    setSelectedId(id);  // Guardamos el id del marker clicado
+    setSelectedId(id);  
+    window.location.href
     alert(`ID de la patrulla seleccionada: ${id}`);  // Muestra un alert con el id (puedes cambiarlo)
   };
 
+  const [x, setX] = useState(false);
+
+  const fun = () => {
+    setX(!x);
+    const bb = document.querySelector(".absolu");
+    const cvb = document.querySelector(".slider2");
+    if (x) {
+      document.body.style.overflow = "hidden";
+      if (bb) bb.style.display = "block";
+      if (cvb) cvb.style.display = "block";
+    } else {
+      document.body.style.overflow = "scroll";
+      if (bb) bb.style.display = "none";
+      if (cvb) cvb.style.display = "none";
+    }
+  };
   
+  const [ver , setver]=useState(false);
+
+const funcionver=()=>{
+  setver(!ver)
+  window.scrollTo(0, 0);
+ 
+    document.body.style.overflow = 'hidden'; // Deshabilita el scroll
+  
+}
+const funcionver2=()=>{setver(!ver)
+  document.body.style.overflow = 'auto';
+
+}
+
 
   return (
     <>
-      <Inicio />
+    
+     
+      {ver == true?( <div className="absolu">
+        <button className='salir' onClick={funcionver2}>x</button>
+        <div className="contenedoropciones">
+          
+          <div className="one"><div className="imagen"><img src={diseño} alt="" /></div>
+          <div className="carac"><h1>placa : ubx728 </h1> <h1>direccion: monterrey</h1> <h1>unidad : 5656 </h1> <button className='modificar'>modificar</button> </div>
+          </div></div>
+          </div>):( <Inicio />)}
+     
+      <button onClick={funcionver}>click</button>
 <p>{selectedId}</p>
       <div className="card">
         <center>
@@ -87,15 +129,15 @@ console.log(index);
                 </ul>
               </div>
               
-
-              <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
-                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+              {ver == false?( <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
+                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onClick={funcionver}>
                   
                 {markerPositions.map((position, index) => (
-          <Marker key={index} position={position} onClick={() => handleMarkerClick(item.id)} />
+          <Marker onClick={funcionver} key={index} position={position} />
         ))}
                 </GoogleMap>
-              </LoadScript>
+              </LoadScript>):('')}
+             
               <img className='foto' src={item.imagen} alt="" />
             </div>
           )) : (

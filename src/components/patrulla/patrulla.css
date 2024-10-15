@@ -137,3 +137,112 @@ td{
 .ocultar{
     height: 555px;
 }
+
+
+.absolu{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    opacity:  1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .xx{
+    color: white;
+    cursor: pointer;
+  }
+
+  .contenedoropciones {
+    margin-top: 33px;
+    width:655px ;
+    margin-right: auto;
+     height:622px ;
+     margin-left: auto;
+    display: flex;
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 0 20px 0 20px;
+    
+  }
+  
+  .one {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    height:  98%;
+    
+    
+    border: 1px solid rgb(203, 214, 220);
+  flex-direction: column;
+    display: flex;
+    border-radius: 10px;
+    background:#fdfcfc;
+    box-shadow: 1px 1px 5px 1px rgb(255, 255, 255);
+  }
+
+  .imagen > img{
+    width: 100%;
+    height: 100%;
+    border-bottom:  1px solid gainsboro;
+    
+  }
+
+  .imagen{
+    width: 100%;
+    height: 50%;
+   
+  }
+
+  .carac{
+    width:100% ;
+    height: 50%;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carac >h1{
+    font-size: 50px;
+    margin: 0%;
+  }
+
+  .modificar{
+    width: 70%;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(59, 59, 224);
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 33px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+   
+  }
+
+  .modificar:hover{
+    background-color:  rgb(48, 48, 161);
+  }
+
+  .salir{
+    width:63px ;
+    height: 63px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    border-radius: 555px;
+    font-size: 33px;
+    color: red;
+    cursor: pointer;
+  }
+
