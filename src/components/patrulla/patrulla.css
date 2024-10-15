@@ -205,7 +205,8 @@ td{
     display: flex;
     justify-content:space-around;
     flex-direction: column;
-   padding-left: 50px;
+   padding-left: 30px;
+   padding-right: 30px;
    padding-right: 20px;
   }
   .carac >h1{
