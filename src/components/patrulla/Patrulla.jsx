@@ -12,6 +12,12 @@ const Pattrulla = () => {
   const [datos, setDatos] = useState([5,5]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
+  const markerPositions = [
+    { lat: 19.432608, lng: -99.133209 }, // CDMX
+    { lat: 19.702556, lng: -101.192376 }, // Morelia
+    { lat: 20.659698, lng: -103.349609 }, // Guadalajara
+    { lat: 25.686614, lng: -100.316113 }, // Monterrey
+  ];
 
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com")
@@ -69,9 +75,12 @@ const Pattrulla = () => {
               </div>
               
 
-              <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc&libraries=places">
+              <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-                  <Marker position={center} />
+                  
+                {markerPositions.map((position, index) => (
+          <Marker key={index} position={position} />
+        ))}
                 </GoogleMap>
               </LoadScript>
               <img className='foto' src={item.imagen} alt="" />
