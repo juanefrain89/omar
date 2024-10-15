@@ -50,9 +50,7 @@ const Datos = () => {
                         lng: -100.30677181798846
                     };
                     setUserLocation(userLatLng);
-latitud =userLatLng.lat;
-                    // Actualizamos el campo 'ubicacion' en el estado con la latitud y longitud
-                    
+latitud =userLatLng.lat;                                       
                     setEstado((prevEstado) => ({
                         ...prevEstado,
                         latitud: `${userLatLng.lat}`,

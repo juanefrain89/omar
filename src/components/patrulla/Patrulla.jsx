@@ -68,8 +68,7 @@ const Pattrulla = () => {
               <div className="imagen"><img src={diseño} alt="Diseño" /></div>
               <div className="carac">
                 <h1>Placa: ubx728</h1>
-                <h1>Dirección: Monterrey</h1> 
-                <p>ID: {pm}</p> {/* Muestra el ID del marcador clicado */}
+                <h1>Dirección: Monterrey</h1>                
                 <h1>Unidad: 5656</h1> 
                 <button className='modificar'>Modificar</button>
               </div>
@@ -96,7 +95,7 @@ const Pattrulla = () => {
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
                   {markerPositions.map((position, index) => (
                     <Marker
-                      onClick={() => funcionver(index)}  // Pasa el ID o índice del marcador
+                      onClick={() => funcionver(index)}  
                       key={index}
                       position={{ lat: position.lat, lng: position.lng }}
                     />
