@@ -9,12 +9,12 @@ import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
 
 const Pattrulla = () => {
-  const [datos, setDatos] = useState([5,5]);
+  const [datos, setDatos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
   const markerPositions = [
-    { lat: 19.432608, lng: -99.133209 }, // CDMX
-    { lat: 19.702556, lng: -101.192376 }, // Morelia
+    { lat: 19.432608, lng: -99.133209 },
+    { lat: 19.702556, lng: -101.192376 },
     { lat: 20.659698, lng: -103.349609 }, // Guadalajara
     { lat: 25.686614, lng: -100.316113 }, // Monterrey
   ];
@@ -24,8 +24,7 @@ const Pattrulla = () => {
       .then(e => {
         setDatos(e.data);
         setLoading(false);
-        console.log(e.data);
-        
+        console.log(e.data.longitud);        
       })
       .catch(error => {
         console.log(error);
@@ -45,6 +44,9 @@ const Pattrulla = () => {
     lat: 19.4326,
     lng: -99.1332
   };
+
+
+  
 
   return (
     <>
