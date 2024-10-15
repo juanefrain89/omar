@@ -109,12 +109,12 @@ const funcionver2=(id)=>{setver(!ver)
         <div className="contenedoropciones">
           
           <div className="one"><div className="imagen"><img src={diseño} alt="" /></div>
-          <div className="carac"><h1>placa : ubx728 </h1><h1>direccion: monterrey</h1>   <h1>unidad : 5656 </h1> <button className='modificar'>modificar</button> </div>
+          <div className="carac"><h1>placa : ubx728 </h1><h1>direccion: monterrey</h1> <p> {selectedId} el id</p>   <h1>unidad : 5656 </h1> <button className='modificar'>modificar</button> </div>
           </div></div>
           </div>):( <Inicio />)}
      
       <button onClick={funcionver}>click</button>
-<p>{selectedId} el id</p>
+
       <div className="card">
         <center>
           <h1 className='patrullash'>Tus patrullas</h1>
