@@ -14,26 +14,32 @@ const Pattrulla = () => {
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
   const [ver, setVer] = useState(false);
-  const [pm, setPm] = useState(null); // Para almacenar el ID de la patrulla
+  const [pm, setPm] = useState(null); 
 
   const markerPositions = [
     { lat: 19.432608, lng: -99.133209 },
     { lat: 19.702556, lng: -101.192376 },
-    { lat: 20.659698, lng: -103.349609 }, // Guadalajara
-    { lat: 25.686614, lng: -100.316113 }, // Monterrey
-    { lat: 25.683339, lng: -100.306771 }  // Otro marcador en Monterrey
+    { lat: 20.659698, lng: -103.349609 }, 
+    { lat: 25.686614, lng: -100.316113 }, 
+    { lat: 25.683339, lng: -100.306771 }  
   ];
-
+const [nuevoarray, setarray]=useState([]);
   const funcionver = (id) => {
-    setPm(id); // Almacena el ID del marcador clicado
+    const elementoEncontrado = datos.find(elemento => elemento.id === id);
+  
+  if (elementoEncontrado) {
+    setarray(elementoEncontrado);  // Si se encuentra el elemento, lo asignamos
+  }
+   
+    setPm(id); 
     setVer(!ver);
-    window.scrollTo(0, 0);  // Pone el scroll en la parte superior
-    document.body.style.overflow = 'hidden'; // Deshabilita el scroll
+    window.scrollTo(0, 0);  
+    document.body.style.overflow = 'hidden'; 
   };
 
   const funcionver2 = () => {
-    setVer(!ver);  // Cierra el modal o panel
-    document.body.style.overflow = 'auto';  // Rehabilita el scroll
+    setVer(!ver);  
+    document.body.style.overflow = 'auto'; 
   };
 
   useEffect(() => {
@@ -93,11 +99,11 @@ const Pattrulla = () => {
             {ver === false && (
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-                  {markerPositions.map((position, index) => (
+                  {datos.map((position, index) => (
                     <Marker
-                      onClick={() => funcionver(index)}  
+                      onClick={() => funcionver(position.id)}  
                       key={index}
-                      position={{ lat: position.lat, lng: position.lng }}
+                      position={{ lat: position.latitud, lng: position.longitud }}
                     />
                   ))}
                 </GoogleMap>
