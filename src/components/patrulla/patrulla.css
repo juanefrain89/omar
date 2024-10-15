@@ -168,7 +168,7 @@ td{
     margin-bottom: 20px;
     cursor: pointer;
     padding: 0 20px 0 20px;
-    overflow-y: scroll;
+   
     
   }
   
@@ -217,7 +217,7 @@ td{
   }
 
   .modificar{
-    width: 100%;
+    width: 90%;
     height: 40px;
     border-radius: 12px;
     border: none;
