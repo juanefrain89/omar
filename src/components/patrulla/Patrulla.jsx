@@ -100,10 +100,11 @@ const [nuevoarray, setarray]=useState([]);
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
                   {datos.map((position, index) => (
+                  
                     <Marker
                       onClick={() => funcionver(position.id)}  
                       key={index}
-                      position={{ lat: position.latitud, lng: position.longitud }}
+                      position={{ lat:parseFloat(position.latitud).toFixed(6), lng: parseFloat(position.longitud).toFixed(6)  }}
                     />
                   ))}
                 </GoogleMap>
