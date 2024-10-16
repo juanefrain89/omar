@@ -10,9 +10,35 @@ import Pattrulla from '../patrulla/Patrulla'
 const Login = () => {
     const [estado, setestado]=useState({
         correo:"",
-        password:""
+        password:"",
+        rol:'usuario'
     })
 
+
+    const mandar =()=>{
+
+        console.log(estado);
+        
+    
+        axios.post("http://localhost:4200/login", estado, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((res) => {
+            console.log(res.data);
+            const {token, rol} =res.data
+            console.log(token);
+            localStorage.setItem('token', token)
+            localStorage.setItem('rol', rol)
+            
+           
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        }
+    
 
     
 
@@ -36,11 +62,11 @@ const fun=(e)=>{
         <h2>Login </h2>
        <input name='correo' onChange={fun} type="text" placeholder='correo' className="password" />
        <input type="text" name='password' onChange={fun} className="password"  placeholder='password'/>
-       <Link className='botonlogin' to='/patrullas'> 
+       <button className='botonlogin' onClick={mandar}> 
      <center>    
        enviar
        </center>
-       </Link>
+       </button>
        <center> 
         <Link to='/registro'>
         NO TIENES CUENTA REGISTRATE AQUI

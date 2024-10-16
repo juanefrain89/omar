@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./datos.css";
 import axios from "axios";
 import Inicio from "../inicio/Inicio";
-
+import { Navigate} from "react-router-dom";
 // Función para cargar el script de Google Maps
 function loadGoogleMapsScript() {
     return new Promise((resolve, reject) => {
@@ -16,7 +16,11 @@ function loadGoogleMapsScript() {
     });
 }
 
-const Datos = () => {
+const Datos = () => {    
+    const  token = localStorage.getItem('token')
+    if (!token) {  
+      return <Navigate to="/" />;
+    }
     const [userLocation, setUserLocation] = useState(null);
     const [geoError, setGeoError] = useState(null);
     const [isScriptLoaded, setIsScriptLoaded] = useState(false);

@@ -13,11 +13,12 @@ const Registro = () => {
 
     const mandar =()=>{
 
+    console.log(estado);
     
 
-    axios.post("https://ddcd-5.onrender.com/registro", estado, {
+    axios.post("http://localhost:4200/registro", estado, {
         headers: {
-            "Content-Type": "multipart/form-data"
+            "Content-Type": "application/json"
         }
     })
     .then((res) => {

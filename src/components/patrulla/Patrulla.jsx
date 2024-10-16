@@ -8,7 +8,12 @@ import axios from 'axios';
 import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
 import diseño from './diseño.png'
+import { Navigate } from 'react-router-dom';
 const Pattrulla = () => {
+  const  token = localStorage.getItem('token')
+  if (!token) {  
+    return <Navigate to="/" />;
+  }
   const [selectedId, setSelectedId] = useState(null);
   const [datos, setDatos] = useState([{
     id:39,
@@ -108,9 +113,7 @@ const [nuevoarray, setarray]=useState([]);
         <center>
           <h1 className='patrullash'>Tus patrullas</h1>
         </center>
-        {loading ? (
-          <p>Cargando patrullas...</p>
-        ) : (
+       
           <div className="padre">
             {ver === false && (
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
@@ -127,7 +130,7 @@ const [nuevoarray, setarray]=useState([]);
               </LoadScript>
             )}
           </div>
-        )}
+       
       </div>
 
       <Piepag />

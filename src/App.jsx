@@ -7,6 +7,7 @@ import {
   Routes,
   Route,
   Link,
+  Navigate
   
 } from "react-router-dom";
 import Inicio from './components/inicio/Inicio';
@@ -16,11 +17,14 @@ import Login from './components/Login/Login';
 import Registro from './components/Login/Registro';
 function App() {
   
+const  token = localStorage.getItem('token')
+console.log(token);
 
   return (
     <>
      <Router>
-      <Routes>       
+      <Routes>     
+       
       <Route path="/" element={<Login/>} />
       <Route path="/registro" element={<Registro/>} />
       <Route path="/patrullas" element={<Pattrulla/>}/>
