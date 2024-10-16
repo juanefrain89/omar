@@ -16,7 +16,7 @@ const Registro = () => {
     console.log(estado);
     
 
-    axios.post("http://localhost:4200/registro", estado, {
+    axios.post("https://ddcd-5.onrender.com/registro", estado, {
         headers: {
             "Content-Type": "application/json"
         }

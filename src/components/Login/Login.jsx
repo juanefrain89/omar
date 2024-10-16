@@ -4,14 +4,18 @@ import pa from "./pa.png"
 import wave from "./wave.png"
 import axios from 'axios'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Pattrulla from '../patrulla/Patrulla'
 
 const Login = () => {
+    const  token = localStorage.getItem('token')
+  if (token) {  
+    return <Navigate to="/patrullas" />;
+  }
     const [estado, setestado]=useState({
         correo:"",
         password:"",
-        rol:'usuario'
+        
     })
 
 
@@ -20,7 +24,7 @@ const Login = () => {
         console.log(estado);
         
     
-        axios.post("http://localhost:4200/login", estado, {
+        axios.post("https://ddcd-5.onrender.com/login", estado, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -31,7 +35,7 @@ const Login = () => {
             console.log(token);
             localStorage.setItem('token', token)
             localStorage.setItem('rol', rol)
-            
+            window.location.href ="http://localhost:5173/patrullas"
            
         })
         .catch((err) => {
