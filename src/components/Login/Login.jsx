@@ -35,7 +35,7 @@ const Login = () => {
             console.log(token);
             localStorage.setItem('token', token)
             localStorage.setItem('rol', rol)
-            window.location.href ="http://localhost:5173/patrullas"
+            window.location.href ="https://omar-7ebn.onrender.com/patrullas"
            
         })
         .catch((err) => {

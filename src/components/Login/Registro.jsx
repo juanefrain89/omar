@@ -49,9 +49,7 @@ const fun=(e)=>{
            <input type="text" name='password' onChange={fun} className="password"  placeholder='password'/>
            <input type="text" onChange={fun} placeholder='confirmar contraseña' name='confirmacion' />
            <button className='botonlogin' onClick={mandar}> 
-         
-           enviar
-           
+                    enviar         
            </button>      
         </div>
       
