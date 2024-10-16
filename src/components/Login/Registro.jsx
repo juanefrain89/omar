@@ -11,7 +11,10 @@ const Registro = () => {
     })
 
 
+    const mandar =()=>{
+
     
+
     axios.post("https://ddcd-5.onrender.com/registro", estado, {
         headers: {
             "Content-Type": "multipart/form-data"
@@ -24,7 +27,7 @@ const Registro = () => {
     .catch((err) => {
         console.log(err);
     });
-
+    }
 
 
 const fun=(e)=>{
@@ -44,17 +47,11 @@ const fun=(e)=>{
            <input name='correo' onChange={fun} type="text" placeholder='correo' className="password" />
            <input type="text" name='password' onChange={fun} className="password"  placeholder='password'/>
            <input type="text" onChange={fun} placeholder='confirmar contraseña' name='confirmacion' />
-           <Link className='botonlogin' to='/'> 
-         <center>    
+           <button className='botonlogin' onClick={mandar}> 
+         
            enviar
-           </center>
-           </Link>
            
-           
-           
-    
-    
-    
+           </button>      
         </div>
       
     
