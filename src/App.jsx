@@ -15,6 +15,7 @@ import Pattrulla from './components/patrulla/Patrulla';
 import Datos from './components/agregar/Datos';
 import Login from './components/Login/Login';
 import Registro from './components/Login/Registro';
+import Publicacionespendientes from './components/tabla/Publicacionespendientes';
 function App() {
   
 const  token = localStorage.getItem('token')
@@ -28,7 +29,8 @@ console.log(token);
       <Route path="/" element={<Login/>} />
       <Route path="/registro" element={<Registro/>} />
       <Route path="/patrullas" element={<Pattrulla/>}/>
-      <Route path="/agregar" element={<Datos/>} />      
+      <Route path="/agregar" element={<Datos/>} />  
+      <Route path="/pendientes" element={<Publicacionespendientes/>} />      
          </Routes>
     </Router>
     </>
