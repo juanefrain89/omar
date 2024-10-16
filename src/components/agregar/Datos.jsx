@@ -24,7 +24,7 @@ const Datos = () => {
     const [estado, setEstado] = useState({
         placa: "",
         ubicacion: "",
-        unidad :'',// Aquí almacenaremos la ubicación
+        unidad :'',
         referencias: "",
         direccion: "",
         numero: "",

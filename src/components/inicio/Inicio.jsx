@@ -7,15 +7,12 @@ const Inicio = () => {
        
      <nav className="contenormenu">
             <div className="menustart">
-            <Link to="/">  
+            <Link to="/patrullas">  
                <p>logo</p>
-                </Link>
-               
+                </Link>               
             </div>
-            <div className="menuend">
-                
-                <Link to="/agregar"> <p className="pmenu">agregar </p> </Link>
-                
+            <div className="menuend">                
+                <Link to="/agregar"> <p className="pmenu">agregar </p> </Link>            
               
     <Link to="/registro">
         <p className="pmenu">mis publicaciones</p>

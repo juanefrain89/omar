@@ -13,17 +13,18 @@ import Inicio from './components/inicio/Inicio';
 import Pattrulla from './components/patrulla/Patrulla';
 import Datos from './components/agregar/Datos';
 import Login from './components/Login/Login';
+import Registro from './components/Login/Registro';
 function App() {
   
 
   return (
     <>
      <Router>
-      <Routes> 
-      
-      <Route path="/" element={<Pattrulla/>} />
-      <Route path="/agregar" element={<Datos/>} />
-      
+      <Routes>       
+      <Route path="/" element={<Login/>} />
+      <Route path="/registro" element={<Registro/>} />
+      <Route path="/patrullas" element={<Pattrulla/>}/>
+      <Route path="/agregar" element={<Datos/>} />      
          </Routes>
     </Router>
     </>

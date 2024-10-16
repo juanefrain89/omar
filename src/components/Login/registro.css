@@ -1,0 +1,94 @@
+body{
+   
+}
+
+.perro{
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    width: 40%;
+    margin-top: 20px;
+    
+}
+.father{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.father > input{
+    margin-bottom: 22px;
+    height: 55px;
+   border-radius: 5px;
+   border: solid #887E7E 1px;
+   padding-left: 15px;
+   font-size: 25px;
+}
+
+.botonlogin{
+    height: 65px;
+    background-color: #0B6EFE;
+    border: none;
+    margin-top: 23px;
+    border-radius: 5px;
+    color: white;
+    font-size: 23px;
+}
+
+.password::placeholder{
+    font-size: 25px;
+}
+
+.password:focus{
+   outline: none;
+}
+
+.pmargin{
+    margin-top: 33px;
+}
+
+.google{
+    width: 23%;
+    height: 75px;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid #4285f4;
+    color: #4285f4;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-family: Arial, sans-serif;
+    margin-top: 15px;
+}
+
+.google-btn:hover {
+    background-color: #4285f4;
+    color: white;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.wave{
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    height: 85px;
+}
+
+.cd{
+    font-size: 55px;
+    margin-top: 22px;
+    color: #0B6EFE;
+}

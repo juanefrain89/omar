@@ -10,7 +10,13 @@ import Piepag from './pie/Piepag';
 import diseño from './diseño.png'
 const Pattrulla = () => {
   const [selectedId, setSelectedId] = useState(null);
-  const [datos, setDatos] = useState([5,5]);
+  const [datos, setDatos] = useState([{
+    id:39,
+    latitud:25.68333908659982,
+    longitud:-100.30677181798846,
+    imagen :pa,
+    contacto: 8135654041
+  }]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
   const [ver, setVer] = useState(false);
@@ -28,6 +34,13 @@ const Pattrulla = () => {
   ];
 const [nuevoarray, setarray]=useState([]);
   const funcionver = (id) => {
+    console.log(id);
+    
+    const userConfirmed = window.confirm("¿ver patrulla con id: "+ '56'+ " ?");
+   
+   
+   
+    if (userConfirmed) {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
   
   if (elementoEncontrado) {
@@ -38,6 +51,7 @@ const [nuevoarray, setarray]=useState([]);
     setVer(!ver);
     window.scrollTo(0, 0);  
     document.body.style.overflow = 'hidden'; 
+}
   };
 
   const funcionver2 = () => {
@@ -76,10 +90,12 @@ const [nuevoarray, setarray]=useState([]);
             <div className="one">
               <div className="imagen"><img src={nuevoarray.imagen} alt="Diseño" /></div>
               <div className="carac">
-                <h1>Placa: ubx728</h1>
-                <h1>Dirección: {nuevoarray.unidad}</h1>                
-                <h1>Unidad: {nuevoarray.latitud}</h1> 
-                <button className='modificar'>Modificar</button>
+              <div className="div">  <h1>Placa: </h1> <p>ubx728</p> </div>   
+                <div className="div">  <h1>Dirección: {nuevoarray.unidad}</h1> <p>monterrey</p> </div>               
+                <div className="div">  <h1>Unidad: </h1>  <p>{nuevoarray.latitud}</p> </div>   
+               
+                <div className="div"> <h1>contacto: </h1> <p>{nuevoarray.contacto}</p>   </div>   
+                               
               </div>
             </div>
           </div>
@@ -87,25 +103,22 @@ const [nuevoarray, setarray]=useState([]);
       ) : (
         <Inicio />
       )}
-
       <button onClick={() => funcionver(null)}>Click para abrir</button>
-
       <div className="card">
         <center>
           <h1 className='patrullash'>Tus patrullas</h1>
         </center>
-
         {loading ? (
           <p>Cargando patrullas...</p>
         ) : (
           <div className="padre">
             {ver === false && (
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
-                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+                <GoogleMap mapContainerStyle={containerStyle} center={center}  onClick={() => funcionver(39)}   zoom={10}>
                   {datos.map((position, index) => (
                   
                     <Marker
-                      onClick={() => funcionver(position.id)}  
+                      onClick={() => funcionver(39)}  
                       key={index}
                       position={{ lat: Number(parseFloat(position.latitud)), lng: Number(parseFloat(position.longitud))  }}
                     />
