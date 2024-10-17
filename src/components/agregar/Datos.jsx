@@ -128,7 +128,7 @@ const mandar = () => {
             formData.append(key, estado[key]);
         }
 
-        axios.post("https://ddcd-5.onrender.com/patrullas_pendientes", formData, {
+        axios.post("https://ddcd-5.onrender.com/pendientespost", formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
