@@ -63,6 +63,8 @@ const [nuevoarray, setarray]=useState([]);
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com")
       .then(e => {
+        console.log(e.data);
+        
         setDatos(e.data);
         setLoading(false);
       })
