@@ -6,10 +6,7 @@ import imagen from '../patrulla/diseño.png';
 const Publicacionespendientes = () => {
   const [loading, setLoading] = useState(true);
   const [mandar, setmandar] = useState([]);
-  const [datos, setDatos] = useState([ {
-    placa:null,
-    ubicacion:'salamanca',id:56,imagen:'jsjsj',contacto:null,unidad:null,referencias:null,latitud:null,longitud:null,
-}]);
+  const [datos, setDatos] = useState([ ]);
 
 
   useEffect(() => {
@@ -33,7 +30,7 @@ const Publicacionespendientes = () => {
 
     
 
-    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
+    axios.post("http://localhost:4200/l", elementoEncontrado       
     )
     .then(response => {
       console.log(response.data);
@@ -65,6 +62,7 @@ const Publicacionespendientes = () => {
           );
         })}
       </table>
+      <img className='imagenes' src="https://ddcd-5.onrender.com/imagenes/1729197914198.png" alt="" />
     </>
   );
 }
