@@ -6,21 +6,23 @@ import imagen from '../patrulla/diseño.png';
 const Publicacionespendientes = () => {
   const [loading, setLoading] = useState(true);
   const [mandar, setmandar] = useState([]);
-  const [datos, setDatos] = useState([
-    {
-      id: 39,
-      placa: 'jkhr56',
-      latitud: 25.68333908659982,
-      longitud: -100.30677181798846,
-      ubicacion: 'ma',
-      unidad: '5656',
-      referencias: "Nolose",
-      imagen: imagen,
-      contacto: 8135654041,
-      selectedImage: imagen // Añadido para manejar la imagen seleccionada
-    }
+  const [datos, setDatos] = useState([ 
   ]);
 
+
+  useEffect(() => {
+    axios.get("https://ddcd-5.onrender.com/mostrar")
+      .then(e => {
+        setDatos(e.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
+
+  
   const handleImageChange = (id, event) => {
     const newDatos = datos.map(item => {
       if (item.id === id) {
@@ -33,7 +35,6 @@ const Publicacionespendientes = () => {
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
-
     const formData = new FormData();
     formData.append('placa', elementoEncontrado.placa);
     formData.append('latitud', elementoEncontrado.latitud);
@@ -45,7 +46,7 @@ const Publicacionespendientes = () => {
       formData.append('imagen', elementoEncontrado.selectedImage); // Envía el archivo de imagen
     }
 
-    axios.post("http://localhost:4200/pendientespost", formData   , {
+    axios.post("https://ddcd-5.onrender.com/pendientespost", formData   , {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
