@@ -14,7 +14,7 @@ const Inicio = () => {
             <div className="menuend">                
                 <Link to="/agregar"> <p className="pmenu">agregar </p> </Link>            
               
-    <Link to="/registro">
+    <Link to="/pendientes">
         <p className="pmenu">mis publicaciones</p>
     </Link>
 
