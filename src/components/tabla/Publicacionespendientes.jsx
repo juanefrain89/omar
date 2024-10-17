@@ -7,6 +7,7 @@ const Publicacionespendientes = () => {
         axios.get("https://ddcd-5.onrender.com")
           .then(e => {
             setDatos(e.data);
+            console.log(e.data);            
             setLoading(false);
           })
           .catch(error => {
