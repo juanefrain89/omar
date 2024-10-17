@@ -19,16 +19,17 @@ const Publicacionespendientes = () => {
     return ( <>
     
     <h1>acepta o rechaza patrullas</h1>
-    <table>
+    <div>
         {datos.map((item)=>{
-            <tr>
-            <td>{item.id}</td>
-            <td>{item.placa}</td>           
-            <td>{item.ubicacion}</td>
-        </tr>
+            <div className="padreee"> 
+           <p>{item.id}</p>      
+            <p>{item.placa}</p>           
+            <p>{item.ubicacion}</p>
+            </div>
+      
         })}
         
-    </table>
+    </div>
     </> );
 }
  
