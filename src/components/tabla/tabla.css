@@ -1,0 +1,32 @@
+.clasedos{
+    display: flex;
+}
+
+.clasedos > button{
+    margin-right: 10px;
+}
+
+.botoncienaceptar{
+    background-color: red;
+    border: none;
+    color: aliceblue;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.botoncienaceptar:hover{
+    background-color: rgb(210, 3, 3);
+}
+
+.botonrechazar{
+    background-color: green;
+    border: none;
+    color: aliceblue;
+    border-radius: 7px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.botonrechazar:hover{
+    background-color: rgb(2, 84, 2);
+}
