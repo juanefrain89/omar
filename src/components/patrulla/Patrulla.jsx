@@ -15,13 +15,9 @@ const Pattrulla = () => {
     return <Navigate to="/" />;
   }
   const [selectedId, setSelectedId] = useState(null);
-  const [datos, setDatos] = useState([{
-    id:39,
-    latitud:25.68333908659982,
-    longitud:-100.30677181798846,
-    imagen :pa,
-    contacto: 8135654041
-  }]);
+  const [datos, setDatos] = useState([
+    
+  ]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
   const [ver, setVer] = useState(false);
