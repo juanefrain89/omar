@@ -45,7 +45,7 @@ const [nuevoarray, setarray]=useState([]);
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
   
   if (elementoEncontrado) {
-    setarray(elementoEncontrado);  // Si se encuentra el elemento, lo asignamos
+    setarray(elementoEncontrado);  
   }
    
     setPm(id); 

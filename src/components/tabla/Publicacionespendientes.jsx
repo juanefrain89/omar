@@ -40,13 +40,13 @@ const Publicacionespendientes = () => {
     formData.append('latitud', elementoEncontrado.latitud);
     formData.append('longitud', elementoEncontrado.longitud);
     formData.append('contacto', elementoEncontrado.contacto);
-    formData.append('operacion', 2); // Se añade la operación
+    formData.append('operacion', 2); 
 
     if (elementoEncontrado.selectedImage) {
-      formData.append('imagen', elementoEncontrado.selectedImage); // Envía el archivo de imagen
+      formData.append('imagen', elementoEncontrado.selectedImage); 
     }
 
-    axios.post("https://ddcd-5.onrender.com/l", formData   , {
+    axios.post("https://ddcd-5.onrender.com/l", datos   , {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -55,7 +55,7 @@ const Publicacionespendientes = () => {
       console.log(response.data);
     })
     .catch(error => {
-      console.log(error); // Muestra cualquier error
+      console.log(error);
     });
   };
 
