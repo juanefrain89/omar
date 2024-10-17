@@ -62,7 +62,7 @@ const Publicacionespendientes = () => {
           );
         })}
       </table>
-      <img className='imagenes' src="https://ddcd-5.onrender.com/imagenes/1729197914198.png" alt="" />
+      <img className='imagenes' src="https://ddcd-5.onrender.com/imagenes/1729209371193.png" alt="" />
     </>
   );
 }
