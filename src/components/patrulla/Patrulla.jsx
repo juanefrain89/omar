@@ -133,16 +133,8 @@ const [nuevoarray, setarray]=useState([]);
             )}
           </div>
           <div className="vbn">
-          {datos.map((position, index) => (
-            <div key={index} className="con"> 
-            <p>{position.id}</p>
-  <img className='imagenes' alt={position.id} key={index} src={position.imagen}   />
-
-  </div>
-))}
-          </div>
-       
-      </div>
+                  </div>
+             </div>
 
       <Piepag />
     </>
