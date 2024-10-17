@@ -6,8 +6,10 @@ import imagen from '../patrulla/diseño.png';
 const Publicacionespendientes = () => {
   const [loading, setLoading] = useState(true);
   const [mandar, setmandar] = useState([]);
-  const [datos, setDatos] = useState([ 
-  ]);
+  const [datos, setDatos] = useState([ {
+    placa:null,
+    ubicacion:'salamanca',id:56,imagen:'jsjsj',contacto:null,unidad:null,referencias:null,latitud:null,longitud:null,
+}]);
 
 
   useEffect(() => {
@@ -23,35 +25,16 @@ const Publicacionespendientes = () => {
       });
   }, []);
 
-  
-  const handleImageChange = (id, event) => {
-    const newDatos = datos.map(item => {
-      if (item.id === id) {
-        return { ...item, selectedImage: event.target.files[0] }; // Guarda el archivo de imagen
-      }
-      return item;
-    });
-    setDatos(newDatos);
-  };
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
-    const formData = new FormData();
-    formData.append('placa', elementoEncontrado.placa);
-    formData.append('latitud', elementoEncontrado.latitud);
-    formData.append('longitud', elementoEncontrado.longitud);
-    formData.append('contacto', elementoEncontrado.contacto);
-    formData.append('operacion', 2); 
+    
+     
 
-    if (elementoEncontrado.selectedImage) {
-      formData.append('imagen', elementoEncontrado.selectedImage); 
-    }
+    
 
-    axios.post("https://ddcd-5.onrender.com/l", datos   , {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
+    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
+    )
     .then(response => {
       console.log(response.data);
     })
