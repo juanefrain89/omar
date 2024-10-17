@@ -15,7 +15,9 @@ const Publicacionespendientes = () => {
 
             setLoading(false);
           });
-      }, []);    
+      }, []);  
+      console.log(datos);
+        
     return ( <>
     
     <h1>acepta o rechaza patrullas</h1>
