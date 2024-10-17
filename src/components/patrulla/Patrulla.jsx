@@ -114,7 +114,11 @@ const [nuevoarray, setarray]=useState([]);
           <h1 className='patrullash'>Tus patrullas</h1>
         </center>
        
+
           <div className="padre">
+          {datos.map((position, index) => (
+  <img key={index} src={position.imagen} alt="" />
+))}
             {ver === false && (
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
                 <GoogleMap mapContainerStyle={containerStyle} center={center}  onClick={() => funcionver(39)}   zoom={10}>

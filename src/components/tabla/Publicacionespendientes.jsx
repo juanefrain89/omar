@@ -17,7 +17,7 @@ const Publicacionespendientes = () => {
       referencias: "Nolose",
       imagen: imagen,
       contacto: 8135654041,
-      selectedImage: null // Añadido para manejar la imagen seleccionada
+      selectedImage: imagen // Añadido para manejar la imagen seleccionada
     }
   ]);
 
@@ -45,7 +45,7 @@ const Publicacionespendientes = () => {
       formData.append('imagen', elementoEncontrado.selectedImage); // Envía el archivo de imagen
     }
 
-    axios.post("http://localhost:4200/l", {formData : formData, operacion :2}  , {
+    axios.post("http://localhost:4200/pendientespost", formData   , {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
