@@ -134,7 +134,11 @@ const [nuevoarray, setarray]=useState([]);
           </div>
           <div className="vbn">
           {datos.map((position, index) => (
-  <img key={index} src={position.imagen} alt="" />
+            <div key={index} className="con"> 
+            <p>{position.id}</p>
+  <img className='imagenes' alt={position.id} key={index} src={position.imagen}   />
+
+  </div>
 ))}
           </div>
        
