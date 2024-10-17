@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect , useState } from "react";
 const Publicacionespendientes = () => {
     const [loading, setLoading] = useState(true);
-    const [datos, setDatos] = useState([])
+    const [datos, setDatos] = useState([5,5])
     useEffect(() => {
         axios.get("https://ddcd-5.onrender.com")
           .then(e => {
@@ -22,7 +22,7 @@ const Publicacionespendientes = () => {
     
     <h1>acepta o rechaza patrullas</h1>
    
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ut dignissimos atque id eius error maiores eos, dolorem repudiandae, at quasi voluptate dolore, esse iusto vel officiis quos sapiente obcaecati.</p>
+      
         {datos.map((item)=>{
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta placeat provident consequatur vitae odio perferendis vero expedita. Quia hic optio ea repellendus culpa, nobis a, perspiciatis nisi enim veritatis magni.</p>        
       
