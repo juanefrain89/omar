@@ -10,8 +10,8 @@ function loadGoogleMapsScript() {
         script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc&callback=initMap`;
         script.async = true;
         script.defer = true;
-        script.onload = resolve;  // Resuelve la promesa cuando el script se ha cargado
-        script.onerror = reject;  // Rechaza la promesa si hay un error al cargar el script
+        script.onload = resolve;  
+        script.onerror = reject;  
         document.head.appendChild(script);
     });
 }
