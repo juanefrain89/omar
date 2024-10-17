@@ -119,20 +119,7 @@ const [nuevoarray, setarray]=useState([]);
           {datos.map((position, index) => (
   <img key={index} src={position.imagen} alt="" />
 ))}
-            {ver === false && (
-              <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
-                <GoogleMap mapContainerStyle={containerStyle} center={center}  onClick={() => funcionver(39)}   zoom={10}>
-                  {datos.map((position, index) => (
-                  
-                    <Marker
-                      onClick={() => funcionver(39)}  
-                      key={index}
-                      position={{ lat: Number(parseFloat(position.latitud)), lng: Number(parseFloat(position.longitud))  }}
-                    />
-                  ))}
-                </GoogleMap>
-              </LoadScript>
-            )}
+           
           </div>
        
       </div>
