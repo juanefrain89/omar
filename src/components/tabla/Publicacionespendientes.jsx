@@ -22,6 +22,7 @@ const Publicacionespendientes = () => {
     
     <h1>acepta o rechaza patrullas</h1>
     <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ut dignissimos atque id eius error maiores eos, dolorem repudiandae, at quasi voluptate dolore, esse iusto vel officiis quos sapiente obcaecati.</p>
         {datos.map((item)=>{
             <div className="padreee"> 
            <p>hpokpko {item.id}</p>      
