@@ -24,7 +24,7 @@ const Publicacionespendientes = () => {
     <div>
         {datos.map((item)=>{
             <div className="padreee"> 
-           <p>{item.id}</p>      
+           <p>hpokpko {item.id}</p>      
             <p>{item.placa}</p>           
             <p>{item.ubicacion}</p>
             </div>
