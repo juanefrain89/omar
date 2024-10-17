@@ -46,7 +46,7 @@ const Publicacionespendientes = () => {
       formData.append('imagen', elementoEncontrado.selectedImage); // Envía el archivo de imagen
     }
 
-    axios.post("https://ddcd-5.onrender.com/pendientespost", formData   , {
+    axios.post("https://ddcd-5.onrender.com/l", formData   , {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
