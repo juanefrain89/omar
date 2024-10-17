@@ -15,6 +15,7 @@ const Publicacionespendientes = () => {
       .then(e => {
         setDatos(e.data);
         setLoading(false);
+
       })
       .catch(error => {
         console.log(error);
@@ -69,7 +70,7 @@ const Publicacionespendientes = () => {
           return (
             <tr key={index}>
               <td className="clase">{item.id}</td>
-              <td className="clase">{item.placa}</td>
+              <td className="clase">{item.imagen}</td>
               <td className="clase">
                 <input type="file" onChange={(e) => handleImageChange(item.id, e)} />
               </td>
