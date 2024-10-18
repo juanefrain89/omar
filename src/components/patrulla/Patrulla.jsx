@@ -37,7 +37,7 @@ const [nuevoarray, setarray]=useState([]);
   const funcionver = (id) => {
     console.log(id);
     
-    const userConfirmed = window.confirm("¿ver patrulla con id: "+ '56'+ " ?");
+    const userConfirmed = window.confirm("¿ver patrulla con id: "+ id+ " ?");
    
    
    
