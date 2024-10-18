@@ -29,7 +29,7 @@ const Publicacionespendientes = () => {
 
     
 
-    axios.post("http://localhost:4200/l", elementoEncontrado       
+    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
     )
     .then(response => {
       console.log(response.data);
