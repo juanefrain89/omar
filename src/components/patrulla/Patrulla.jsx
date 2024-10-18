@@ -15,9 +15,7 @@ const Pattrulla = () => {
     return <Navigate to="/" />;
   }
   const [selectedId, setSelectedId] = useState(null);
-  const [datos, setDatos] = useState([
-    
-  ]);
+  const [datos, setDatos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null); 
   const [ver, setVer] = useState(false);
@@ -111,15 +109,12 @@ const [nuevoarray, setarray]=useState([]);
         <center>
           <h1 className='patrullash'>Tus patrullas</h1>
         </center>
-       
-
-          <div className="padre">
-       
-            {ver === false && (
+                <div className="padre">
+                   {ver === false && (
               <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
-                <GoogleMap mapContainerStyle={containerStyle} center={center}  onClick={() => funcionver(39)}   zoom={10}>
+                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
                   {datos.map((position, index) => (
-                  
+               
                     <Marker
                       onClick={() => funcionver(position.id)}  
                       key={index}
