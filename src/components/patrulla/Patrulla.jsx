@@ -121,7 +121,7 @@ const [nuevoarray, setarray]=useState([]);
                   {datos.map((position, index) => (
                   
                     <Marker
-                      onClick={() => funcionver(39)}  
+                      onClick={() => funcionver(position.id)}  
                       key={index}
                       position={{ lat: Number(parseFloat(position.latitud)), lng: Number(parseFloat(position.longitud))  }}
                     />

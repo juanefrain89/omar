@@ -25,12 +25,11 @@ const Publicacionespendientes = () => {
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
-    
-     
+       
 
     
 
-    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
+    axios.post("http://localhost:4200/l", elementoEncontrado       
     )
     .then(response => {
       console.log(response.data);
