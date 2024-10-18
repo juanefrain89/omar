@@ -119,7 +119,7 @@ const [nuevoarray, setarray]=useState([]);
                     <Marker
                       onClick={() => funcionver(position.id)}  
                       key={index}
-                      position={{ lat: 25.68333908659982, lng: -100.30677181798846  }}
+                      position={{ lat: parseFloat(position.latitud.trim()), lng: parseFloat(position.longitud.trim()) }}
                     />
                   ))}
                 </GoogleMap>
