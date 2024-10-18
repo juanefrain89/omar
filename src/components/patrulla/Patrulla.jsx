@@ -21,7 +21,6 @@ const Pattrulla = () => {
   const [ver, setVer] = useState(false);
   const [pm, setPm] = useState(null); 
 
-  console.log(parseFloat(25.68333908659982).toFixed(6));
   
 
   const markerPositions = [
@@ -65,6 +64,8 @@ const [nuevoarray, setarray]=useState([]);
         
         setDatos(e.data);
         setLoading(false);
+        console.log(e.data);
+        
       })
       .catch(error => {
         console.log(error);
