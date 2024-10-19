@@ -1,8 +1,7 @@
-
 import axios from 'axios'
 import './registro.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+
 const Registro = () => {
     const [estado, setEstado] = useState({
         correo: "",
@@ -11,11 +10,19 @@ const Registro = () => {
         rol: 'usuario'
     })
 
+    const [error, setError] = useState(""); // Estado para almacenar el mensaje de error
+
     // Función para enviar el formulario
     const mandar = (e) => {
         e.preventDefault(); // Evita que el formulario se recargue
 
-        console.log("Estado enviado:", estado); // El estado ya se ha actualizado aquí
+        // Comprobación de que las contraseñas coinciden
+        if (estado.password !== estado.confirmacion) {
+            setError("Las contraseñas no coinciden");
+            return; // Evitar el envío si no coinciden
+        }
+
+        setError(""); // Limpia el mensaje de error si las contraseñas coinciden
 
         axios.post("https://ddcd-5.onrender.com/registro", estado, {
             headers: {
@@ -49,32 +56,32 @@ const Registro = () => {
         <div className="father">
             <h2>Registro</h2>
             <form onSubmit={mandar}>
-<div className="father">
-                <input 
-                    name='correo' 
-                    onChange={fun} 
-                    type="text" 
-                    placeholder='Correo' 
-                    className="password" 
-
-                />
-                <input 
-                    type="password" 
-                    name='password' 
-                    onChange={fun} 
-                    className="password"  
-                    placeholder='Password'
-                />
-                <input 
-                    type="password" 
-                    onChange={fun} 
-                    placeholder='Confirmar contraseña' 
-                    name='confirmacion' 
-                />
-                <button className='botonlogin' type="submit"> 
-                    Enviar         
-                </button>
-</div>      
+                <div className="father">
+                    <input 
+                        name='correo' 
+                        onChange={fun} 
+                        type="text" 
+                        placeholder='Correo' 
+                        className="password" 
+                    />
+                    <input 
+                        type="password" 
+                        name='password' 
+                        onChange={fun} 
+                        className="password"  
+                        placeholder='Password'
+                    />
+                    <input 
+                        type="password" 
+                        onChange={fun} 
+                        placeholder='Confirmar contraseña' 
+                        name='confirmacion' 
+                    />
+                    {error && <p style={{ color: 'red' }}>{error}</p>} {/* Mensaje de error si las contraseñas no coinciden */}
+                    <button className='botonlogin' type="submit"> 
+                        Enviar         
+                    </button>
+                </div>      
             </form>
         </div>
         </>
