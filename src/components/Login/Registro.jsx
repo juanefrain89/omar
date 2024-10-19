@@ -1,6 +1,3 @@
-import axios from 'axios'
-import './registro.css'
-import { useState } from 'react'
 
 const Registro = () => {
     const [estado, setEstado] = useState({
@@ -48,12 +45,14 @@ const Registro = () => {
         <div className="father">
             <h2>Registro</h2>
             <form onSubmit={mandar}>
+<div className="father">
                 <input 
                     name='correo' 
                     onChange={fun} 
                     type="text" 
                     placeholder='Correo' 
                     className="password" 
+
                 />
                 <input 
                     type="password" 
@@ -70,7 +69,8 @@ const Registro = () => {
                 />
                 <button className='botonlogin' type="submit"> 
                     Enviar         
-                </button>      
+                </button>
+</div>      
             </form>
         </div>
         </>
