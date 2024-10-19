@@ -92,3 +92,7 @@ body{
     margin-top: 22px;
     color: #0B6EFE;
 }
+
+.no{
+    display: none;
+}

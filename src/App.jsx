@@ -16,21 +16,28 @@ import Datos from './components/agregar/Datos';
 import Login from './components/Login/Login';
 import Registro from './components/Login/Registro';
 import Publicacionespendientes from './components/tabla/Publicacionespendientes';
+import Comprobar from './components/Login/Comprobar';
 function App() {
   
 const  token = localStorage.getItem('token')
 console.log(token);
+const [h, hh]=useState()
+const add = (mensaje) => { 
+  hh(mensaje)
+ }
 
   return (
     <>
+   
      <Router>
       <Routes>     
        
       <Route path="/" element={<Login/>} />
-      <Route path="/registro" element={<Registro/>} />
+      <Route path="/registro" element={<Registro add={add}/>} />
+      <Route path="/pendientes" element={<Publicacionespendientes/>} />    
       <Route path="/patrullas" element={<Pattrulla/>}/>
       <Route path="/agregar" element={<Datos/>} />  
-      <Route path="/pendientes" element={<Publicacionespendientes/>} />      
+      <Route path="/comprobar" element={<Comprobar correo={h}  />} />     
          </Routes>
     </Router>
     </>
