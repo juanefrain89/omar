@@ -1,61 +1,80 @@
 import axios from 'axios'
 import './registro.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+
 const Registro = () => {
-    const [estado, setestado]=useState({
-        correo:"",
-        password:"",
-        confirmacion:'',
-        rol:'usuario'
+    const [estado, setEstado] = useState({
+        correo: "",
+        password: "",
+        confirmacion: '',
+        rol: 'usuario'
     })
 
+    // Función para enviar el formulario
+    const mandar = (e) => {
+        e.preventDefault(); // Evita que el formulario se recargue
 
-    const mandar =()=>{
+        console.log("Estado enviado:", estado); // El estado ya se ha actualizado aquí
 
-    console.log(estado);
-    
-
-    axios.post("https://ddcd-5.onrender.com/registro", estado, {
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then((res) => {
-        console.log(res.data);
-        console.log("Registro enviado");       
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+        axios.post("https://ddcd-5.onrender.com/registro", estado, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((res) => {
+            console.log(res.data);
+            console.log("Registro enviado");       
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     }
 
+    const fun = (e) => {
+        const { name, value } = e.target;
+        // Actualiza el estado correctamente sin depender de valores anteriores
+        setEstado((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
+    }
 
-const fun=(e)=>{
-    setestado({
-        ...estado,
-        [e.target.name]:e.target.value
-    })
-    console.log(estado);}
     return (  
         <>
         <center> 
-       <h1 className='cd'>inicia sesion</h1>
-       </center>
+            <h1 className='cd'>Inicia Sesión</h1>
+        </center>
         
         <div className="father">
-            <h2>Login </h2>
-           <input name='correo' onChange={fun} type="text" placeholder='correo' className="password" />
-           <input type="text" name='password' onChange={fun} className="password"  placeholder='password'/>
-           <input type="text" onChange={fun} placeholder='confirmar contraseña' name='confirmacion' />
-           <button className='botonlogin' onClick={mandar}> 
-                    enviar         
-           </button>      
+            <h2>Registro</h2>
+            <form onSubmit={mandar}>
+                <input 
+                    name='correo' 
+                    onChange={fun} 
+                    type="text" 
+                    placeholder='Correo' 
+                    className="password" 
+                />
+                <input 
+                    type="password" 
+                    name='password' 
+                    onChange={fun} 
+                    className="password"  
+                    placeholder='Password'
+                />
+                <input 
+                    type="password" 
+                    onChange={fun} 
+                    placeholder='Confirmar contraseña' 
+                    name='confirmacion' 
+                />
+                <button className='botonlogin' type="submit"> 
+                    Enviar         
+                </button>      
+            </form>
         </div>
-      
-    
-        </> 
+        </>
     );
 }
- 
+
 export default Registro;
