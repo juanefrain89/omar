@@ -1,4 +1,8 @@
 
+import axios from 'axios'
+import './registro.css'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 const Registro = () => {
     const [estado, setEstado] = useState({
         correo: "",
