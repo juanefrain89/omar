@@ -243,7 +243,8 @@ td{
   .salir{
     width:63px ;
     height: 63px;
-
+    align-self: flex-start;
+    align-self:self-start;
     top: 12px;
     left: 12px;
     border-radius: 555px;
