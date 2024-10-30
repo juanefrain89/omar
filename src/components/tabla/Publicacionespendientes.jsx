@@ -31,6 +31,13 @@ const [informacion, setinformacion]=useState("hola")
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
+    const index = datos.findIndex(elemento => elemento.id === id);
+    if (index !== -1) {
+      const updatedDatos = [...datos]; // Hacemos una copia del array
+      updatedDatos.splice(index, 1); // Eliminamos el elemento
+      setDatos(updatedDatos); // Actualizamos el estado con el nuevo array
+    }
+  }
        setinformacion("espera unos segundos")
 
     
