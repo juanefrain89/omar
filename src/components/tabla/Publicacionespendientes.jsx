@@ -16,6 +16,7 @@ const Publicacionespendientes = () => {
       setDatos(contexto.pendiente);
     }
   }, [contexto.pendiente]);
+console.log(contexto.pendiente, "aqui es pendientes");
 
   const aceptado = (id) => {
     alert("usuario aceptado, espere unos segundos");
