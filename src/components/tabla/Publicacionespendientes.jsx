@@ -10,13 +10,9 @@ const Publicacionespendientes = () => {
   const [datos, setDatos] = useState([ ]);
 const contexto = useContext(Contexto)
 
-  useEffect(() => {
-   
-        setDatos(contexto.pendiente);
-        
-
-     });
-
+useEffect(() => {
+  setDatos(contexto.pendiente);
+}, [contexto.pendiente]); 
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
