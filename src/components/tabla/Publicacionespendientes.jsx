@@ -10,7 +10,7 @@ const Publicacionespendientes = () => {
   const [datos, setDatos] = useState([ ]);
   const date = useContext(Contexto)
   console.log(date.pendientes, "aqui es pendiente");
-const [informacion, setinformacion]=useState("")
+const [informacion, setinformacion]=useState("hola")
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com/mostrar")
     setDatos(date.pendientes);
