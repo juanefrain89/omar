@@ -10,7 +10,7 @@ const Publicacionespendientes = () => {
   const [datos, setDatos] = useState([ ]);
   const date = useContext(Contexto)
   console.log(date.pendientes, "aqui es pendiente");
-
+const [informacion, setinformacion]=useState("")
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com/mostrar")
     setDatos(date.pendientes);
@@ -30,7 +30,7 @@ const Publicacionespendientes = () => {
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
-       
+       setinformacion("espera unos segundos")
 
     
 
@@ -38,6 +38,8 @@ const Publicacionespendientes = () => {
     )
     .then(response => {
       console.log(response.data);
+      alert("usuario aceptado")
+      setinformacion("fue aceptado")
     })
     .catch(error => {
       console.log(error);
@@ -66,7 +68,7 @@ const Publicacionespendientes = () => {
           );
         })}
       </table>
-      <img className='imagenes' src="https://ddcd-5.onrender.com/imagenes/1729209371193.png" alt="" />
+     <p>{setinformacion}</p>
     </>
   );
 }
