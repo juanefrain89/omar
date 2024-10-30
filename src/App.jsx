@@ -6,7 +6,7 @@ import Patrulla from './components/patrulla/Patrulla';
 import Datos from './components/agregar/Datos';
 import Login from './components/Login/Login';
 import Registro from './components/Login/Registro';
-import PublicacionesPendientes from './components/tabla/PublicacionesPendientes';
+import Publicacionespendientes from './components/tabla/Publicacionespendientes';
 import Comprobar from './components/Login/Comprobar';
 import General from './General';
 
@@ -29,7 +29,7 @@ function App() {
         <Route element={<General />}>
         <Route path="/" element={<Login />} />
           <Route path="/registro" element={<Registro add={add} />} />
-          <Route path="/pendientes" element={<PublicacionesPendientes />} />
+          <Route path="/pendientes" element={<Publicacionespendientes />} />
           <Route path="/patrullas" element={<Patrulla />} />
           <Route path="/agregar" element={<Datos />} />
           <Route path="/comprobar" element={<Comprobar correo={h} />} />
