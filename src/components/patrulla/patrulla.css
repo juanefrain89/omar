@@ -283,3 +283,9 @@ h1{
     width: 555px ;
     height: 555px;
 }
+
+@media (max-height: 750px) {
+    .one{
+        height: 90%;
+    }
+}
