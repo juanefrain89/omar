@@ -60,20 +60,11 @@ const [nuevoarray, setarray]=useState([]);
   };
 
   useEffect(() => {
-    axios.get("https://ddcd-5.onrender.com")
-      .then(e => {
-        console.log(e.data);
+   
         
-        setDatos(e.data);
-        setLoading(false);
-        console.log(e.data);
-        
-      })
-      .catch(error => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, []);
+        setDatos(date.datos);
+      
+  }, [date.datos]);
 
   const containerStyle = {
     width: '100%',

@@ -9,7 +9,7 @@ const General = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("https://jsonplaceholder.typicode.com/posts")
+        axios.get("https://ddcd-5.onrender.com")
             .then(response => {
                 setDatos(response.data);
                 console.log(response);
