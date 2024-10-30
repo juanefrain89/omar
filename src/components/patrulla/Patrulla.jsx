@@ -42,9 +42,12 @@ const [nuevoarray, setarray]=useState([]);
    
     if (userConfirmed) {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
+  console.log(elementoEncontrado);
   
   if (elementoEncontrado) {
     setarray(elementoEncontrado);  
+  console.log(nuevoarray , "este es nuevo array");
+  
   }
    
     setPm(id); 
