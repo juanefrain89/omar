@@ -1,61 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import './tabla.css';
 import imagen from '../patrulla/diseño.png';
 import { Contexto } from '../../General';
-import { useContext } from 'react';
+
 const Publicacionespendientes = () => {
   const [loading, setLoading] = useState(true);
-  const [mandar, setmandar] = useState([]);
-  const [datos, setDatos] = useState([ ]);
-  const date = useContext(Contexto)
+  const [datos, setDatos] = useState([]);
+  const date = useContext(Contexto);
   console.log(date.pendientes, "aqui es pendiente");
-const [informacion, setinformacion]=useState("hola")
+  const [informacion, setInformacion] = useState("hola");
+
   useEffect(() => {
     setDatos(date.pendientes);
     setLoading(false);
     axios.get("https://ddcd-5.onrender.com/mostrar")
-   
       .then(e => {
-        console.log(e.data , "aqui es pendiente 2");
-        
-      
-
+        console.log(e.data, "aqui es pendiente 2");
       })
       .catch(error => {
         console.log(error);
         setLoading(false);
       });
-  }, []);
-
+  }, [date.pendientes]); // Asegúrate de usar el efecto correctamente
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
-    const index = datos.findIndex(elemento => elemento.id === id);
-    if (index !== -1) {
-      const updatedDatos = [...datos]; // Hacemos una copia del array
-      updatedDatos.splice(index, 1); // Eliminamos el elemento
-      setDatos(updatedDatos); // Actualizamos el estado con el nuevo array
+
+    if (elementoEncontrado) {
+      setInformacion("espera unos segundos");
+
+      // Realiza la llamada a la API para aceptar
+      axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado)
+        .then(response => {
+          console.log(response.data);
+          alert("usuario aceptado");
+          setInformacion("fue aceptado");
+
+          // Eliminar el elemento del array de datos solo después de la aceptación
+          const updatedDatos = datos.filter(elemento => elemento.id !== id);
+          setDatos(updatedDatos); // Actualizamos el estado con el nuevo array
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
-  }
-       setinformacion("espera unos segundos")
-
-    
-
-    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
-    )
-    .then(response => {
-      console.log(response.data);
-      alert("usuario aceptado")
-      setinformacion("fue aceptado")
-    })
-    .catch(error => {
-      console.log(error);
-    });
   };
 
   console.log(datos);
-  
+
   return (
     <>
       <h1>acepta o rechaza patrullas</h1>
@@ -76,7 +69,7 @@ const [informacion, setinformacion]=useState("hola")
           );
         })}
       </table>
-     <p>{setinformacion}</p>
+      <p>{informacion}</p>
     </>
   );
 }
