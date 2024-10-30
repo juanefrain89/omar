@@ -13,11 +13,12 @@ const Publicacionespendientes = () => {
 
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com/mostrar")
+    setDatos(date.pendientes);
+    setLoading(false);
       .then(e => {
         console.log(e.data , "aqui es pendiente 2");
         
-        setDatos(e.data);
-        setLoading(false);
+      
 
       })
       .catch(error => {
