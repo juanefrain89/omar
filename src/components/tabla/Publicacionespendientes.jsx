@@ -18,6 +18,7 @@ useEffect(() => {
 const [informacion , setinformacion]=useState("")
 
   const aceptado = (id) => {
+    alert("usuario aceptado espere unos segundos")
     setinformacion("espera unos segundos")
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
        
