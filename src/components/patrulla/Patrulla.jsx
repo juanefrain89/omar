@@ -80,6 +80,7 @@ const [nuevoarray, setarray]=useState([]);
     <>
       {ver ? (
         <div className="absolu">
+          <div className="absolu-hijo"> 
           <button className='salir' onClick={funcionver2}>x</button>
           <div className="contenedoropciones">
             <div className="one">
@@ -93,6 +94,7 @@ const [nuevoarray, setarray]=useState([]);
                                
               </div>
             </div>
+          </div>
           </div>
         </div>
       ) : (
