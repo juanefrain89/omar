@@ -39,7 +39,7 @@ const Login = () => {
             console.log(token);
             localStorage.setItem('token', token);
             localStorage.setItem('rol', rol);
-            window.location.href = "https://omar-7ebn.onrender.com/patrullas";
+            window.location.href = "https://omar-d35h.vercel.app/patrullas";
         })
         .catch((err) => {
             console.log(err);
