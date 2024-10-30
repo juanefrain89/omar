@@ -9,7 +9,7 @@ const Publicacionespendientes = () => {
   const [mandar, setmandar] = useState([]);
   const [datos, setDatos] = useState([ ]);
   const date = useContext(Contexto)
-  console.log(date.datos, "aqui es pendiente");
+  console.log(date.pendientes, "aqui es pendiente");
 
   useEffect(() => {
     axios.get("https://ddcd-5.onrender.com/mostrar")
