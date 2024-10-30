@@ -8,9 +8,9 @@ const Publicacionespendientes = ({ pendientes, onUpdate }) => {
   const [informacion, setInformacion] = useState("hola");
 
   useEffect(() => {
-    if (pendientes.length > 0) {
+   
       setDatos(pendientes);
-    }
+    
   }, [pendientes]);
 
   const aceptado = (id) => {
