@@ -34,6 +34,8 @@ const Publicacionespendientes = () => {
       axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado)
         .then(response => {
           console.log(response.data);
+          console.log(elementoEncontrado);
+          
           alert("usuario aceptado");
           setInformacion("fue aceptado");
           const updatedDatos = datos.filter(elemento => elemento.id !== id);
