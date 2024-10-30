@@ -1,21 +1,17 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './tabla.css';
 import imagen from '../patrulla/diseño.png';
-import { Contexto } from '../../General';
 
-const Publicacionespendientes = () => {
-  const { pendientes } = useContext(Contexto); // Desestructuración para obtener pendientes
-  const [loading, setLoading] = useState(true);
+const Publicacionespendientes = ({ pendientes, onUpdate }) => {
   const [datos, setDatos] = useState([]);
   const [informacion, setInformacion] = useState("hola");
 
   useEffect(() => {
     if (pendientes.length > 0) {
       setDatos(pendientes);
-      setLoading(false);
     }
-  }, [pendientes]); // Usar directamente `pendientes` del contexto
+  }, [pendientes]);
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
@@ -23,7 +19,6 @@ const Publicacionespendientes = () => {
     if (elementoEncontrado) {
       setInformacion("Espera unos segundos...");
 
-      // Realiza la llamada a la API para aceptar
       axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado)
         .then(response => {
           console.log(response.data);
@@ -31,6 +26,7 @@ const Publicacionespendientes = () => {
           setInformacion("Fue aceptado");
           const updatedDatos = datos.filter(elemento => elemento.id !== id);
           setDatos(updatedDatos);
+          onUpdate(); // Llama al método del padre para volver a cargar los datos
         })
         .catch(error => {
           console.error("Error al aceptar el usuario:", error);
@@ -38,10 +34,6 @@ const Publicacionespendientes = () => {
         });
     }
   };
-
-  if (loading) {
-    return <p>Cargando...</p>; // Mensaje de carga
-  }
 
   return (
     <>
