@@ -12,9 +12,10 @@ const Publicacionespendientes = () => {
   console.log(date.pendientes, "aqui es pendiente");
 const [informacion, setinformacion]=useState("hola")
   useEffect(() => {
-    axios.get("https://ddcd-5.onrender.com/mostrar")
     setDatos(date.pendientes);
     setLoading(false);
+    axios.get("https://ddcd-5.onrender.com/mostrar")
+   
       .then(e => {
         console.log(e.data , "aqui es pendiente 2");
         
