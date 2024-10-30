@@ -14,6 +14,8 @@ useEffect(() => {
   setDatos(contexto.pendiente);
 }, [contexto.pendiente]); 
 
+console.log(contexto);
+
 
 const [informacion , setinformacion]=useState("")
 
