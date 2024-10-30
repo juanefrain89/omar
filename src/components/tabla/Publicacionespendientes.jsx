@@ -1,61 +1,69 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './tabla.css';
 import imagen from '../patrulla/diseño.png';
 import { Contexto } from '../../General';
-
+import { useContext } from 'react';
 const Publicacionespendientes = () => {
   const [loading, setLoading] = useState(true);
   const [mandar, setmandar] = useState([]);
-  const [datos, setDatos] = useState([]); // Inicializado como array vacío
-  const contexto = useContext(Contexto);
-  const [informacion, setinformacion] = useState("");
+  const [datos, setDatos] = useState([ ]);
+  const date = useContext(Contexto)
+  console.log(date.datos, "aqui es pendiente");
 
   useEffect(() => {
-    if (contexto.pendiente) { // Verifica si contexto.pendiente existe
-      setDatos(contexto.pendiente);
-    }
-  }, [contexto.pendiente]);
-console.log(contexto.pendiente, "aqui es pendientes");
+    axios.get("https://ddcd-5.onrender.com/mostrar")
+      .then(e => {
+        setDatos(e.data);
+        setLoading(false);
 
-  const aceptado = (id) => {
-    alert("usuario aceptado, espere unos segundos");
-    setinformacion("Espera unos segundos...");
-    const elementoEncontrado = datos.find(elemento => elemento.id === id);
-
-    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado)
-      .then(response => {
-        setinformacion(response.data);
-        window.location.href = "https://omar-d35h.vercel.app";
       })
       .catch(error => {
-        setinformacion("Hubo un error, intente de nuevo por favor");
+        console.log(error);
+        setLoading(false);
       });
+  }, []);
+
+
+  const aceptado = (id) => {
+    const elementoEncontrado = datos.find(elemento => elemento.id === id);
+       
+
+    
+
+    axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
+    )
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   };
 
-  const handleImageChange = (id, e) => {
-    // Implementa esta función para manejar la selección de archivos
-  };
-
+  console.log(datos);
+  
   return (
     <>
-      <h1>Acepta o rechaza patrullas</h1>
+      <h1>acepta o rechaza patrullas</h1>
       <table>
-        {datos.length > 0 ? datos.map((item, index) => (
-          <tr key={index}>
-            <td className="clase">{item.id}</td>
-            <td className="clase">{item.imagen}</td>
-            <td className="clase">
-              <input type="file" onChange={(e) => handleImageChange(item.id, e)} />
-            </td>
-            <td className="clase clasedos">
-              <button className="botoncienaceptar">Rechazar</button>
-              <button className="botonrechazar" onClick={() => aceptado(item.id)}>Aceptar</button>
-            </td>
-          </tr>
-        )) : <tr><td colSpan="4">No hay datos disponibles.</td></tr>}
+        {datos.map((item, index) => {
+          return (
+            <tr key={index}>
+              <td className="clase">{item.id}</td>
+              <td className="clase">{item.imagen}</td>
+              <td className="clase">
+                <input type="file" onChange={(e) => handleImageChange(item.id, e)} />
+              </td>
+              <td className="clase clasedos">
+                <button className="botoncienaceptar">rechazar</button>
+                <button className="botonrechazar" onClick={() => aceptado(item.id)}>aceptar</button>
+              </td>
+            </tr>
+          );
+        })}
       </table>
-      <p>{informacion}</p>
+      <img className='imagenes' src="https://ddcd-5.onrender.com/imagenes/1729209371193.png" alt="" />
     </>
   );
 }
