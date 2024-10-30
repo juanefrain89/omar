@@ -14,7 +14,11 @@ useEffect(() => {
   setDatos(contexto.pendiente);
 }, [contexto.pendiente]); 
 
+
+const [informacion , setinformacion]=useState("")
+
   const aceptado = (id) => {
+    setinformacion("espera unos segundos")
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
        
 
@@ -23,10 +27,13 @@ useEffect(() => {
     axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado       
     )
     .then(response => {
-      console.log(response.data);
+setinformacion(response.data);
+window.location.href ="https://omar-d35h.vercel.app"
+
+
     })
     .catch(error => {
-      console.log(error);
+      setinformacion("hubo un error intentan de nuevo porfavor ")
     });
   };
 
@@ -52,7 +59,7 @@ useEffect(() => {
           );
         })}
       </table>
-      <img className='imagenes' src="https://ddcd-5.onrender.com/imagenes/1729209371193.png" alt="" />
+   <p>{informacion}</p>
     </>
   );
 }
