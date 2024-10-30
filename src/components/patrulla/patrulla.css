@@ -150,8 +150,6 @@ td{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    overflow-y: scroll;
    
   }
 
@@ -243,8 +241,7 @@ td{
   .salir{
     width:63px ;
     height: 63px;
-    align-self: flex-start;
-    align-self:self-start;
+    position: absolute;
     top: 12px;
     left: 12px;
     border-radius: 555px;
@@ -285,11 +282,4 @@ h1{
 .imagenes{
     width: 555px ;
     height: 555px;
-}
-
-.absolu-hijo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }
