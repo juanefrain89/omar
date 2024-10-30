@@ -4,7 +4,6 @@ import axios from "axios";
 import Inicio from "../inicio/Inicio";
 import { Navigate } from "react-router-dom";
 
-// Función para cargar el script de Google Maps
 function loadGoogleMapsScript() {
     return new Promise((resolve, reject) => {
         const script = document.createElement("script");
@@ -112,6 +111,12 @@ const Datos = () => {
 
     const mandar = () => {
         console.log(estado);
+        // Verificar si la ubicación está disponible
+        if (!userLocation) {
+            alert("Por favor, activa la ubicación y permite el acceso para enviar el registro.");
+            return; // Salir de la función si no hay ubicación
+        }
+
         const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
 
         if (userConfirmed) {
