@@ -9,11 +9,13 @@ import pa from "./diseño.png";
 import Piepag from './pie/Piepag';
 import diseño from './diseño.png'
 import { Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Contexto } from '../../General';
 const Pattrulla = () => {
   const  token = localStorage.getItem('token')
-  if (!token) {  
-    return <Navigate to="/" />;
-  }
+const date = useContext(Contexto)
+console.log(date.datos);
+
   const [selectedId, setSelectedId] = useState(null);
   const [datos, setDatos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -129,7 +131,14 @@ const [nuevoarray, setarray]=useState([]);
           <div className="vbn">
                   </div>
              </div>
-
+           
+           <ul>
+            {date.datos.map((item)=>{
+              return(
+<li>{item.title}</li>
+              )
+            })}
+           </ul>
       <Piepag />
     </>
   );

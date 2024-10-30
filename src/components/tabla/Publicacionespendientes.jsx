@@ -2,25 +2,20 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './tabla.css';
 import imagen from '../patrulla/diseño.png';
-
+import { useContext } from 'react';
+import { Contexto } from '../../General';
 const Publicacionespendientes = () => {
   const [loading, setLoading] = useState(true);
   const [mandar, setmandar] = useState([]);
   const [datos, setDatos] = useState([ ]);
-
+const contexto = useContext(Contexto)
 
   useEffect(() => {
-    axios.get("https://ddcd-5.onrender.com/mostrar")
-      .then(e => {
-        setDatos(e.data);
-        setLoading(false);
+   
+        setDatos(contexto.pendiente);
+        
 
-      })
-      .catch(error => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, []);
+     });
 
 
   const aceptado = (id) => {

@@ -6,8 +6,12 @@ import axios from 'axios'
 import { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Pattrulla from '../patrulla/Patrulla'
-
+import General from '../../General'
+import { Contexto } from '../../General'
+import { useContext } from 'react'
 const Login = () => {
+    const date = useContext(Contexto)
+console.log(date);
     const  token = localStorage.getItem('token')
   if (token) {  
     return <Navigate to="/patrullas" />;
@@ -87,7 +91,7 @@ const fun=(e)=>{
 
 
     </div>
-  
+   
 
     </> );
 }
