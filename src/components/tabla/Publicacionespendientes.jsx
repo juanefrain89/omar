@@ -11,8 +11,8 @@ const Publicacionespendientes = () => {
 const contexto = useContext(Contexto)
 
 useEffect(() => {
-  setDatos(Array.isArray(contexto.pendiente) ? contexto.pendiente : []);
-}, [contexto.pendiente]);
+  setDatos(contexto.pendiente);
+}, [contexto.pendiente]); 
 
 
 const [informacion , setinformacion]=useState("")
@@ -44,7 +44,7 @@ window.location.href ="https://omar-d35h.vercel.app"
     <>
       <h1>acepta o rechaza patrullas</h1>
       <table>
-      {Array.isArray(datos) && datos.map((item, index) => {
+        {datos.map((item, index) => {
           return (
             <tr key={index}>
               <td className="clase">{item.id}</td>
