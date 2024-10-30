@@ -12,7 +12,7 @@ const General = () => {
         axios.get("https://ddcd-5.onrender.com")
             .then(response => {
                 setDatos(response.data);
-                console.log(response);
+                console.log(response.data , "aqui es general");
             })
             .catch(error => {
                 console.error(error);
