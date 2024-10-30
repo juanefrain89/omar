@@ -36,10 +36,8 @@ const Publicacionespendientes = () => {
           console.log(response.data);
           alert("usuario aceptado");
           setInformacion("fue aceptado");
-
-          // Eliminar el elemento del array de datos solo después de la aceptación
           const updatedDatos = datos.filter(elemento => elemento.id !== id);
-          setDatos(updatedDatos); // Actualizamos el estado con el nuevo array
+          setDatos(updatedDatos); 
         })
         .catch(error => {
           console.log(error);
@@ -69,7 +67,6 @@ const Publicacionespendientes = () => {
           );
         })}
       </table>
-      <p>{informacion}</p>
     </>
   );
 }
