@@ -22,7 +22,7 @@ const Publicacionespendientes = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [date.pendientes]); // Asegúrate de usar el efecto correctamente
+  }, [date.pendientes]); 
 
   const aceptado = (id) => {
     const elementoEncontrado = datos.find(elemento => elemento.id === id);
@@ -30,7 +30,7 @@ const Publicacionespendientes = () => {
     if (elementoEncontrado) {
       setInformacion("espera unos segundos");
 
-      // Realiza la llamada a la API para aceptar
+   
       axios.post("https://ddcd-5.onrender.com/l", elementoEncontrado)
         .then(response => {
           console.log(response.data);
