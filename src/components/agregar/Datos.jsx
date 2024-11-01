@@ -162,9 +162,9 @@ const Datos = () => {
                         <h1>Contacto</h1>
                         <input onChange={fun} name="contacto" className="esado" type="text" />
                     </div>
-                    <div className="conu none">
-                        <h1>Ubicación</h1>
-                        <input name="ubicacion" value={estado.latitud} onChange={fun} className="esado" type="text" />
+                    <div className="conu ">
+                        <h1 className="none">Ubicación</h1>
+                        <input  name="ubicacion" value={estado.latitud} onChange={fun} className="esado none" type="text" />
                         <h1>Número de Unidad</h1>
                         <input name="unidad" className="esado" onChange={fun} type="number" />
                     </div>
