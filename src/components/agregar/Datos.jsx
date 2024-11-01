@@ -18,9 +18,7 @@ function loadGoogleMapsScript() {
 
 const Datos = () => {
     const token = localStorage.getItem("token");
-    // Verifica si el token existe; si no, redirige al inicio  if (!token) {return <Navigate to="/" />;}
-   
-
+    
     const [userLocation, setUserLocation] = useState(null);
     const [geoError, setGeoError] = useState(null);
     const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -39,7 +37,6 @@ const Datos = () => {
     const [p, pp] = useState("");
 
     useEffect(() => {
-        // Obtener la ubicación real del usuario y cargar el script de Google Maps
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
@@ -101,6 +98,7 @@ const Datos = () => {
         const confirmacion = document.querySelector(".confirmacion");
         confirmacion.style.position = p.length < 1 ? "absolute" : "relative";
     }, [p]);
+
     const mandar = () => {
         console.log(estado);
         
@@ -117,7 +115,7 @@ const Datos = () => {
                 formData.append(key, estado[key]);
             }
     
-            axios.post("https://ddcd-5.onrender.com/upload", formData, {
+            axios.post("https://ddcd-5.onrender.com/pendientespost", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -129,11 +127,29 @@ const Datos = () => {
                 pp(`Nuevo registro insertado con ID: ${res.data.id}`);
             })
             .catch((err) => {
-                console.log("Error en la carga:", err.response.data);
+                console.log("Error en la carga:", err);
             });
         }
     };
-    
+
+    const findNearbyRestaurants = (latLng) => {
+        const service = new window.google.maps.places.PlacesService(document.createElement('div'));
+        service.nearbySearch(
+            {
+                location: latLng,
+                radius: 1500, // Adjust radius as needed
+                type: ['restaurant'],
+            },
+            (results, status) => {
+                if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+                    console.log('Restaurants found:', results);
+                    // You can set state or do something with the results here
+                } else {
+                    console.error('Error finding restaurants:', status);
+                }
+            }
+        );
+    };
 
     return (
         <>
