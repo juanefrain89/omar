@@ -100,7 +100,7 @@ const Pattrulla = () => {
                   <Marker
                     onClick={() => funcionver(position.id)}  
                     key={index}
-                    position={{ lat: parseFloat(position.latitud.trim()), lng: parseFloat(position.longitud.trim()) }}
+                    position={{ lat: position.latitud, lng: position.longitud }}
                   />
                 ))}
               </GoogleMap>
