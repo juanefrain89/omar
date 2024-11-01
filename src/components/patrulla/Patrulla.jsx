@@ -135,6 +135,7 @@ const [nuevoarray, setarray]=useState([]);
               )
             })}
            </ul>
+           <img src="http://mavahost.com/imagenes/imagen.png" alt="imagen" />
       <Piepag />
     </>
   );
