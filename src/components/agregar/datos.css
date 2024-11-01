@@ -126,3 +126,8 @@ button.bon {
         align-items: start;
     }
 }
+
+
+.none{
+    display: none;
+}

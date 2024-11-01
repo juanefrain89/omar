@@ -77,8 +77,8 @@ const Pattrulla = () => {
               </div>
               <div className="carac">
                 <div className="div"><h1>Placa: </h1> <p>ubx728</p></div>   
-                <div className="div"><h1>Dirección: {nuevoarray.unidad}</h1> <p>monterrey</p></div>               
-                <div className="div"><h1>Unidad: </h1> <p>{nuevoarray.latitud}</p></div>   
+                <div className="div"><h1>Dirección: {nuevoarray.referencias}</h1> <p>monterrey</p></div>               
+                <div className="div"><h1>Unidad: </h1> <p>{nuevoarray.unidad}</p></div>   
                 <div className="div"><h1>contacto: </h1> <p>{nuevoarray.contacto}</p></div>   
               </div>
             </div>

@@ -162,14 +162,14 @@ const Datos = () => {
                         <h1>Contacto</h1>
                         <input onChange={fun} name="contacto" className="esado" type="text" />
                     </div>
-                    <div className="conu">
+                    <div className="conu none">
                         <h1>Ubicación</h1>
                         <input name="ubicacion" value={estado.latitud} onChange={fun} className="esado" type="text" />
                         <h1>Número de Unidad</h1>
                         <input name="unidad" className="esado" onChange={fun} type="number" />
                     </div>
                     <div className="conu">
-                        <h1>Referencias</h1>
+                        <h1>ubicacion</h1>
                         <input onChange={fun} name="referencias" className="esado" type="text" />
                         <h1>Imágenes</h1>
                         <input type="file" onChange={handleImageChange} name="imagen" />
