@@ -95,7 +95,7 @@ const Pattrulla = () => {
         <div className="padre">
           {ver === false && (
             <LoadScript googleMapsApiKey="AIzaSyBT6zx6h6AO_z7D0qHJzql9PvbJ4wDmklc">
-              <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+              <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
                 {datos.map((position, index) => (
                   <Marker
                     onClick={() => funcionver(position.id)}  
