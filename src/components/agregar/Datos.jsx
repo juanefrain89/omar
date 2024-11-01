@@ -18,14 +18,12 @@ function loadGoogleMapsScript() {
 
 const Datos = () => {
     const token = localStorage.getItem("token");
-    if (!token) {
-        return <Navigate to="/" />;
-    }
+    // Verifica si el token existe; si no, redirige al inicio  if (!token) {return <Navigate to="/" />;}
+   
 
     const [userLocation, setUserLocation] = useState(null);
     const [geoError, setGeoError] = useState(null);
     const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-
     const [estado, setEstado] = useState({
         placa: "",
         ubicacion: "",
@@ -38,6 +36,7 @@ const Datos = () => {
         longitud: "",
         imagen: null,
     });
+    const [p, pp] = useState("");
 
     useEffect(() => {
         // Obtener la ubicación real del usuario y cargar el script de Google Maps
@@ -91,57 +90,50 @@ const Datos = () => {
 
     const fun = (e) => {
         e.preventDefault();
-        setEstado({
-            ...estado,
+        setEstado((prevEstado) => ({
+            ...prevEstado,
             [e.target.name]: e.target.value,
-        });
+        }));
         console.log(estado.placa);
     };
 
-    const [p, pp] = useState("");
-
     useEffect(() => {
         const confirmacion = document.querySelector(".confirmacion");
-        if (p.length < 1) {
-            confirmacion.style.position = "absolute";
-        } else {
-            confirmacion.style.position = "relative";
-        }
+        confirmacion.style.position = p.length < 1 ? "absolute" : "relative";
     }, [p]);
-
     const mandar = () => {
         console.log(estado);
-        // Verificar si la ubicación está disponible
+        
         if (!userLocation) {
             alert("Por favor, activa la ubicación y permite el acceso para enviar el registro.");
-            return; // Salir de la función si no hay ubicación
+            return; 
         }
-
+    
         const userConfirmed = window.confirm("¿Deseas mandar nuevo registro?");
-
+    
         if (userConfirmed) {
             const formData = new FormData();
             for (const key in estado) {
                 formData.append(key, estado[key]);
             }
-
-            axios
-                .post("https://ddcd-5.onrender.com/pendientespost", formData, {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                })
-                .then((res) => {
-                    console.log(res.data);
-                    console.log("Registro enviado");
-                    console.log("ID del nuevo registro:", res.data.id);
-                    pp(`Nuevo registro insertado con ID: ${res.data.id}`);
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+    
+            axios.post("https://ddcd-5.onrender.com/pendientespost", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            })
+            .then((res) => {
+                console.log(res.data);
+                console.log("Registro enviado");
+                console.log("ID del nuevo registro:", res.data.id);
+                pp(`Nuevo registro insertado con ID: ${res.data.id}`);
+            })
+            .catch((err) => {
+                console.log("Error en la carga:", err.response.data);
+            });
         }
     };
+    
 
     return (
         <>
