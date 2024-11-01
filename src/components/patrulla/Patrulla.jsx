@@ -61,8 +61,8 @@ const Pattrulla = () => {
   };
 
   const center = {
-    lat: 19.4326,
-    lng: -99.1332
+    lat: 25.861266095346114,
+    lng: -100.31035466833359,
   };
 
   return (
