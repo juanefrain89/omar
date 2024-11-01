@@ -274,6 +274,8 @@ margin: 0;
 .div >p{
     color:blue ;
     font-size: 22px;
+    word-wrap: break-word; /* Alternativamente, puedes usar overflow-wrap */
+    overflow-wrap: break-word;
 }
 
 h1{
