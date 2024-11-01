@@ -117,7 +117,7 @@ const Datos = () => {
                 formData.append(key, estado[key]);
             }
     
-            axios.post("https://ddcd-5.onrender.com/pendientespost", formData, {
+            axios.post("https://ddcd-5.onrender.com/upload", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
