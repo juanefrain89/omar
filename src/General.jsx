@@ -11,7 +11,7 @@ const General = () => {
 
     // Carga inicial de `datos`
     useEffect(() => {
-        axios.get("https://ddcd-5.onrender.com")
+        axios.get("https://ddcd.vercel.app")
             .then(response => {
                 setDatos(response.data);
                 console.log(response.data, "aquí es general");
@@ -26,7 +26,7 @@ const General = () => {
 
     // Función para actualizar `pendientes`
     const fetchPendientes = () => {
-        axios.get("https://ddcd-5.onrender.com/mostrar")
+        axios.get("https://ddcd.vercel.app/mostrar")
             .then(response => {
                 setPendientes(response.data);
             })
