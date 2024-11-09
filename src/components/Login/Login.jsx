@@ -28,7 +28,7 @@ const Login = () => {
         setCargando(true);
         console.log(estado);
 
-        axios.post("https://ddcd-5.onrender.com/login", estado, {
+        axios.post("https://myapp-neon-theta.vercel.app/login", estado, {
             headers: {
                 "Content-Type": "application/json"
             }
